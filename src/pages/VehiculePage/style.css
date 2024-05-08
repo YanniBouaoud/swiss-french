@@ -1,0 +1,275 @@
+.pizza-list {
+  list-style: none;
+}
+
+body {
+  background-color: #ffffff;
+  margin-top: 50px;
+}
+
+.pizza-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #F6F0ED;
+  transition: border-width 0.3s ease;
+  transition: all 0.3s ease; 
+
+}
+
+.pizza-info {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(100% - 160px);
+}
+
+.pizza-info span {
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+.logo-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.logo {
+  width: 110px;
+  height: auto;
+}
+
+.page-title {
+  text-decoration: none;
+}
+
+/* Pizza */
+.pizza-item:hover {
+  border-width: 2px;
+}
+
+.pizza-price {
+  background-color: #28536B;
+  padding: 5px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: left;
+}
+
+.pizza-price span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pizza-item:hover {
+  border-width: 2px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+  transform: scale(1.05); 
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #323232;
+  --bg-color-sub: #dedede;
+  --bg-color: #eee;
+  --main-color: #323232;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: var(--main-color);
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+
+.cart-details {
+  font-size: 12px; 
+}
+
+.cart-details h4 {
+  font-size: 19px; 
+}
+
+
+.cart-details {
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.show-cart-details {
+  opacity: 1; 
+}
+
+.button-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button-icon:hover {
+  background-color: #f0f0f0;
+}
+
+.minus {
+  color: #ff6347; 
+}
+
+.plus {
+  color: #32cd32; 
+}
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.button-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.button-icon:hover {
+  background-color: #F6F0ED;
+}
+
+.minus {
+  color: #ff6347;
+}
+
+.plus {
+  color: #32cd32; 
+}
+
+
+
+
+.button {
+  background-color: transparent;
+  color: green;
+  padding: 5px 10px;
+  border: 2px solid green;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: green;
+  color: white;
+}
+
+.cart-details {
+  opacity: 0; 
+  transition: opacity 0.5s ease;
+  color: rgb(112, 107, 107); 
+
+}
+
+.show-cart-details {
+  opacity: 1;
+}
+
+.left-align {
+  text-align: left;
+  color: #28536B; 
+  height: 60px; 
+  padding: 0 20px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  position: relative; 
+  font-weight: 900;
+}
+
+/* https://dev.to/clementgaudiniere/create-a-skeleton-loading-m1h   petite css pour le fun  */
+@keyframes shine {
+  0% {
+    background-position: -500px;
+  }
+  100% {
+    background-position: 500px;
+  }
+}
+
+.left-align::after {
+  content: '';
+  position: absolute;
+  top: 1;
+  left: 0;
+  width: 25%;
+  height: 80%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.174), transparent 50%, rgba(255, 255, 255, 0.415)) repeat-x;
+  background-size: 500px 100%;
+  animation: shine 2s infinite linear;
+}
+
+.pizza-item.selected {
+  background-color: #F6F0ED;
+}
