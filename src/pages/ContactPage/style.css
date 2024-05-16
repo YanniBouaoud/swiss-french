@@ -40,3 +40,7 @@
     border-radius: 10px;
   }
   
+  .car-container {
+    position: relative; /* Assurez-vous que les éléments sont positionnés de manière relative */
+    z-index: 1; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
+  }

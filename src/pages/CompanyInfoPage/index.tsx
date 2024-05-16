@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import FriseChronologique from "../../components/FriseChronologique";
 
 const CompanyInfoPage = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
+
+    <div className="car-container">
+
     <div className="company-info-container">
       <div
         className={`company-info ${isHovered ? "hovered" : ""}`}
@@ -32,19 +34,15 @@ const CompanyInfoPage = () => {
             turpis finibus vel.
           </p>
         </div>
-        <div className="info-image">
-          <img src="vague.jpg" alt="Image Description" />
-        </div>
+      
       </div>
 
 
       <div className="sectors">
         <h2>Nos Secteurs d'Activité</h2>
-        <ul>
-          <li>Automobile</li>
-          <li>Immobilier</li>
-          <li>Finance</li>
-        </ul>
+          Automobile
+          Immobilier
+          Finance
       </div>
       <div className="markets">
         <h2>Marchés</h2>
@@ -62,6 +60,8 @@ const CompanyInfoPage = () => {
         </Link>
       </div>
     </div>
+    </div>
+
   );
 };
 

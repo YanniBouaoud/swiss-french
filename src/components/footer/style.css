@@ -1,6 +1,10 @@
 .footer {
-  background-color: #272932;
+  background-color: #00171F;
   position: sticky;
   bottom: 0;
   width: 100%;
+}
+.car-container {
+  position: relative; /* Assurez-vous que les éléments sont positionnés de manière relative */
+  z-index: 2; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
 }

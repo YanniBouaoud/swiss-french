@@ -11,6 +11,7 @@ import RegisterPage from "./pages/RegisterPage";
 import VehiculePage from "./pages/VehiculePage";
 import ContactPage from "./pages/ContactPage";
 import CompanyInfoPage from "./pages/CompanyInfoPage";
+import BatimentPage from "./pages/BatimentPage";
 
 const App = () => {
   const navigate = useNavigate();
@@ -20,7 +21,11 @@ const App = () => {
   );
 
   return (
+
+
     <div className="App">
+            <div className="striped-background"></div> {/* Ajoutez cette ligne */}
+
       <Header
         setIsAuthenticated={setIsAuthenticated}
         isAuthenticated={isAuthenticated}
@@ -32,6 +37,7 @@ const App = () => {
             <Route path="/VehiculePage" element={<VehiculePage />} />
             <Route path="/RegisterPage" element={<RegisterPage />} />
             <Route path="/ContactPage" element={<ContactPage />} />
+            <Route path="/BatimentPage" element={<BatimentPage />} />
             <Route path="/CompanyInfoPage" element={<CompanyInfoPage />} />
 
             <Route path="/PizzaListPage/:filter" element={<PizzaListPage />} />
@@ -48,6 +54,7 @@ const App = () => {
         <Footer />
       </footer>
     </div>
+
   );
 };
 

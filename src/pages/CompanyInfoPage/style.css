@@ -9,19 +9,25 @@
   .markets {
     width: 80%;
     margin: 20px 0;
+   
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   }
   
-  .company-info h1,
-  .sectors h2,
+  .company-info h2,
   .markets h2 {
-    color: #1e4e7e;
+    color: white;
+   
   }
+
+  .sectors h2{
+    color: black;
+  }
+
 .markets{
-  background-color: #d4ecee;
+  background-color: #1C2541;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
   border-radius: 20px; 
-
+color: white;
   border-radius: 20px; 
   padding: 20px; 
 }
@@ -56,17 +62,19 @@
   .sectors {
     border-radius: 20px; 
     padding: 20px; 
-
+color: black;
   }
   
   .company-info{
-    background-color: #d4ecee;
+    background-color: #1C2541;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 20px; 
-
+color: white;
     border-radius: 20px; 
     padding: 20px; 
     display: flex;
+    border-radius: 20px; 
+    padding: 20px; 
   }
 
   .info-text {
@@ -99,4 +107,9 @@
 .contact-button-container:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease;
+}
+
+.car-container {
+  position: relative; /* Assurez-vous que les éléments sont positionnés de manière relative */
+  z-index: 1; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
 }

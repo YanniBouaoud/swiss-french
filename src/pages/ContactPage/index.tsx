@@ -4,6 +4,8 @@ import "./style.css"; // Assurez-vous que le chemin est correct
 
 const ContactPage = () => {
   return (
+    <div className="car-container">
+
     <div className="contact-container">
       <div className="contact-info">
         <Typography variant="h2">Contact</Typography>
@@ -35,6 +37,8 @@ const ContactPage = () => {
         ></iframe>
       </div>
     </div>
+    </div>
+
   );
 };
 

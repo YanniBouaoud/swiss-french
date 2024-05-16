@@ -79,6 +79,9 @@ const Login: React.FC<Props> = ({ setIsAuthenticated, onRegisterClick }) => {
   });
 
   return (
+
+    <div className="App striped-background">
+
     <div className="login-container">
       {error && <Typography color="error">{t("common.loginError")}</Typography>}
       <form className="login-form" onSubmit={formik.handleSubmit}>
@@ -123,6 +126,8 @@ const Login: React.FC<Props> = ({ setIsAuthenticated, onRegisterClick }) => {
 
       </form>
     </div>
+    </div>
+
   );
 };
 

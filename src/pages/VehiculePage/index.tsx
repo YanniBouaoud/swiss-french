@@ -136,6 +136,9 @@ const VehiculePage: React.FC = () => {
       <Typography variant="h4" gutterBottom className="left-align">
         {t("common.choose")}
       </Typography>
+
+      <div className="car-container">
+
       {cars.length > 0 ? (
         <ul className="car-list">
           {cars.map((car, index) => (
@@ -186,6 +189,8 @@ const VehiculePage: React.FC = () => {
         <p>Aucune car disponible.</p>
       )}
     </div>
+    </div>
+
   );
 };
 

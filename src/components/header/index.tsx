@@ -32,7 +32,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: "#272932",
+        backgroundColor: "#00171F",
         top: 0,
         bottom: "auto",
         height: "60px",

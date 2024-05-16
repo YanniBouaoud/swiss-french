@@ -31,7 +31,7 @@ const Welcome = () => {
           <Tab
             label={t("common.activiteBatiment")}
             component={NavLink}
-            to="/activite-batiment"
+            to="/BatimentPage"
             className="nav-link"
           />
           <Tab

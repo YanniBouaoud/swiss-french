@@ -1,16 +1,23 @@
 .car-list {
   list-style: none;
+  z-index: 1; 
+
 }
+
 
 .car-comment-container {
   display: flex;
   align-items: center;  
   justify-content: center; /* Center align horizontally */
   margin-bottom: 10px;
+  z-index: 2; 
+
 }
 
 .car-info {
   margin-right: 20px; /* Adjust as needed */
+  z-index: 2; 
+
 }
 
 body {
@@ -22,9 +29,11 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: #f5f5eb; 
   transition: border-width 0.3s ease;
   transition: all 0.3s ease; 
+  z-index: 2; 
+
 
 }
 
@@ -32,6 +41,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   max-width: calc(100% - 160px);
+  z-index: 2; 
 }
 
 .car-info span {
@@ -75,6 +85,8 @@ body {
   color: #ffffff;
   font-size: 20px;
   text-align: left;
+  z-index: 2; 
+
 }
 
 .car-price span {
@@ -108,6 +120,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  z-index: 2; 
+
 }
 
 .button {
@@ -175,20 +189,28 @@ body {
 
 .cart-details {
   font-size: 12px; 
+  z-index: 2; 
+
 }
 
 .cart-details h4 {
   font-size: 19px; 
+  z-index: 2; 
+
 }
 
 
 .cart-details {
   opacity: 0; 
   transition: opacity 0.3s ease; 
+  z-index: 2; 
+
 }
 
 .show-cart-details {
   opacity: 1; 
+  z-index: 2; 
+
 }
 
 .button-icon {
@@ -260,6 +282,12 @@ body {
 
 .show-cart-details {
   opacity: 1;
+  z-index: 2; 
+
+}
+.car-container {
+  position: relative; /* Assurez-vous que les éléments sont positionnés de manière relative */
+  z-index: 1; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
 }
 
 .left-align {
@@ -297,6 +325,6 @@ body {
 }
 
 .car-item.selected {
-  background-color: #E8E5DA;
+  background-color: #3A506B;
+  color: white;
 }
-
