@@ -31,7 +31,12 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: "#BBB193", top: 0, bottom: "auto" }}
+      sx={{
+        backgroundColor: "#272932",
+        top: 0,
+        bottom: "auto",
+        height: "60px",
+      }} // Ajuster la hauteur ici
     >
       <Box
         display="flex"
@@ -39,34 +44,36 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
         alignItems="center"
         margin="0 1em"
       >
-        <Box display="flex" alignItems="center">
-          <img src="logoSFG.png" alt="Logo" className="logo" />
-        </Box>
-
         <Box
           display="flex"
           justifyContent="center"
           alignItems="center"
           className="text-3d"
+          sx={{ flex: 0.3 }} // Ajout de cette ligne pour que le titre prenne toute la largeur disponible
         >
-       <Typography
-  variant="h2"
-  className="neon-title" // Ajoutez la classe neon-title ici
-  sx={{
-    fontFamily: "Arial",
-    fontSize: "40px",
-    textAlign: "center",
-    fontWeight: "bold",
-  }}
->
-  <Link to="/" className="link-no-style"> 
-    Swiss French Group
-  </Link>
-</Typography>
-
+          <Typography
+            variant="h2"
+            className="neon-title" // Ajoutez la classe neon-title ici
+            sx={{
+              fontFamily: "Exo",
+              fontSize: "30px",
+              textAlign: "center",
+              fontWeight: "bold",
+              marginTop: "15px", // Ajoutez la marge top ici
+            }}
+          >
+            <Link to="/" className="link-no-style">
+              Swiss French Group
+            </Link>
+          </Typography>
         </Box>
 
-        <Box display="flex" alignItems="center" className="menu">
+        <Box
+          display="flex"
+          alignItems="center"
+          className="menu"
+          marginTop="1em"
+        >
           <Box>
             <ToggleButtonGroup
               value={i18n.language}

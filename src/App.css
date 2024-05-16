@@ -1,17 +1,19 @@
+body {
+  margin: 0; /* Supprime les marges par défaut du corps */
+}
+
 .App {
   text-align: center;
-  background-color: #F6F0ED;
+  background-color: #ffffff; /* Couleur de fond pour le contenu de l'application */
 }
 
 main {
   padding: 2.5em 0.5em;
-  background-color: #F6F0ED;
-
+  background-color: #ffffff; /* Couleur de fond pour la section principale */
 }
 
-header.css-1r11njw-MuiPaper-root-MuiAppBar-root,
-footer {
-  background-color: rgb(111, 106, 185);
+header, footer {
+  background-color: rgb(111, 106, 185); /* Couleur de fond pour l'en-tête et le pied de page */
   color: #fff;
   width: 100%;
 }
@@ -23,5 +25,3 @@ footer {
   box-shadow: 0px -2px 4px -1px rgba(0, 0, 0, 0.2),
     0px -4px 5px 0px rgba(0, 0, 0, 0.14), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);
 }
-
-

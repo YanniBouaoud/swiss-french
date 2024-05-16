@@ -1,0 +1,42 @@
+.contact-container {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    height: 100vh; /* Pour occuper toute la hauteur de la fenêtre */
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligner à gauche */
+    padding: 20px;
+    border-right: 1px solid #ccc; /* Ajouter une bordure à droite pour séparer la carte */
+  }
+  
+  
+  .map {
+    width: 50%;
+    margin-left: 2rem;
+  }
+  
+  .info {
+    margin-top: 20px; /* Espacement entre chaque information */
+    text-align: left;
+
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap');
+
+  h2 {
+    color: #304C89;
+    font-family: "Exo", sans-serif;
+}
+  
+  .info > * {
+    margin-bottom: 1rem;
+  }
+  
+  iframe {
+    border: none;
+    border-radius: 10px;
+  }
+  

@@ -86,7 +86,7 @@ const Login: React.FC<Props> = ({ setIsAuthenticated, onRegisterClick }) => {
           placeholder={t("common.loginPlaceholder")}
           type="text"
           InputLabelProps={{ style: { color: "white" } }}
-          InputProps={{ style: { color: "white" } }}
+          InputProps={{ style: { color: "black" } }}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.login}
@@ -98,7 +98,7 @@ const Login: React.FC<Props> = ({ setIsAuthenticated, onRegisterClick }) => {
           placeholder={t("common.passwordPlaceholder")}
           type="password"
           InputLabelProps={{ style: { color: "white", background: "white" } }}
-          InputProps={{ style: { color: "white" } }}
+          InputProps={{ style: { color: "black" } }}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}

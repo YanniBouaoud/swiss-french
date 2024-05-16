@@ -1,4 +1,6 @@
 .footer {
-    background-color: #BBB193;
-  }
-  
+  background-color: #272932;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}

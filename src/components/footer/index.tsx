@@ -4,8 +4,8 @@ import "./style.css";
 const Footer = () => {
   return (
     <Box className="footer">
-      <Typography variant="body1" sx={{ padding: "5px" }}>
-        &copy; mariopizza
+      <Typography variant="body1"  >
+        &copy; sfb
       </Typography>
     </Box>
   );

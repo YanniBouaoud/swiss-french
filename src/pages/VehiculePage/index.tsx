@@ -48,128 +48,142 @@ const VehiculePage: React.FC = () => {
       if (selectedCars.length === 0) {
         throw new Error("Veuillez sélectionner au moins une voiture.");
       }
-  
+
       const devisCarLines = selectedCars.map((carIndex, i) => {
         const commentaire = cartCommentaires[i].trim(); // Récupérer le commentaire correspondant à la voiture actuelle
-      
-        if (commentaire.trim() !== '') { 
+
+        if (commentaire.trim() !== "") {
           return {
             car_id: carIndex + 1,
             commentaire: commentaire,
           };
         } else {
-          throw new Error('Le commentaire de la voiture ne peut pas être vide.');
+          throw new Error(
+            "Le commentaire de la voiture ne peut pas être vide."
+          );
         }
       });
-      
+
       const deviscarData = {
         devisCarLines: devisCarLines,
       };
-  
+
       console.log("Order before saving:", deviscarData);
       const savedDevisCar = await DevisCarService.save(deviscarData);
       console.log("Saved order:", savedDevisCar);
-  
+
       // Réinitialisation du panier après avoir sauvegardé la commande
       setSelectedCars([]);
       setCartCommentaires([]);
       setCart(0);
-  
+
       alert("Commande enregistrée avec succès ! 30 minutes de délai d'attente");
     } catch (error) {
       console.error("Erreur lors de l'enregistrement de la commande :", error);
-      alert("Erreur lors de l'enregistrement de la commande. Veuillez réessayer.");
+      alert(
+        "Erreur lors de l'enregistrement de la commande. Veuillez réessayer."
+      );
     }
   };
-  
 
   return (
     <div>
-      <IconButton onClick={handleShowCartDetails} className="cart-icon">
-        <SendIcon />
-        <Typography>Votre devis</Typography>
-      </IconButton>
+  <IconButton onClick={handleShowCartDetails} className="cart-icon">
+    <SendIcon />
+    <Typography>Votre devis</Typography>
+  </IconButton>
 
-      <div className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}>
-        {selectedCars.map((carIndex, i) => (
-          <div key={i} className="car-comment-container">
-            <Typography variant="h6">{cars[carIndex].name}</Typography>
-            <TextField
-              label="Commentaire"
-              variant="outlined"
-              value={cartCommentaires[i]}
-              onChange={(e) => {
-                const newCommentaires = [...cartCommentaires];
-                newCommentaires[i] = e.target.value;
-                setCartCommentaires(newCommentaires);
-              }}
-            />
-          </div>
-        ))}
-        <button
-          onClick={handleSaveDevisCar}
-          style={{
-            backgroundColor: "green",
-            color: "white",
-            padding: "5px 10px",
-            borderRadius: "5px",
-            border: "none",
+  <div className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}>
+    {selectedCars.map((carIndex, i) => (
+      <div key={i} className="car-comment-container">
+        <div className="car-info">
+          <Typography variant="h6">{cars[carIndex].name}</Typography>
+         
+        </div>
+        <TextField
+          label="Commentaire"
+          variant="outlined"
+          value={cartCommentaires[i]}
+          onChange={(e) => {
+            const newCommentaires = [...cartCommentaires];
+            newCommentaires[i] = e.target.value;
+            setCartCommentaires(newCommentaires);
           }}
-          onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
-            (e.target as HTMLButtonElement).style.backgroundColor = "lightgreen";
-          }}
-          onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
-            (e.target as HTMLButtonElement).style.backgroundColor = "green";
-          }}
-        >
-          &#10003; {t("common.validerDevis")}
-        </button>{" "}
+        />
       </div>
+    ))}
+    <button
+      onClick={handleSaveDevisCar}
+      style={{
+        backgroundColor: "green",
+        color: "white",
+        padding: "5px 10px",
+        borderRadius: "5px",
+        border: "none",
+      }}
+      onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
+        (e.target as HTMLButtonElement).style.backgroundColor = "lightgreen";
+      }}
+      onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
+        (e.target as HTMLButtonElement).style.backgroundColor = "green";
+      }}
+    >
+      &#10003; {t("common.validerDevis")}
+    </button>{" "}
+  </div>
 
 
       <Typography variant="h4" gutterBottom className="left-align">
         {t("common.choose")}
       </Typography>
       {cars.length > 0 ? (
-        <ul className="pizza-list">
+        <ul className="car-list">
           {cars.map((car, index) => (
             <li
               key={index}
-              className={`pizza-item ${selectedCars.includes(index) ? 'selected' : ''}`}
+              className={`car-item ${
+                selectedCars.includes(index) ? "selected" : ""
+              }`}
               onClick={() => handleToggleSelection(index)}
             >
-              <div className="pizza-info">
-              <img
+              <div className="car-info">
+
+                <img
                   src={car.image}
                   alt={car.image}
                   style={{ width: 200, marginRight: "1em" }}
                 />
-                
-             <Box display="flex" flexDirection="column" alignItems="flex-start">
-  <Typography variant="h6" fontWeight="bold">
-    {car.name}
-  </Typography>
-  <Typography
-    variant="body2"
-    style={{
-      fontStyle: "italic",
-      color: "grey",
-      marginBottom: "0.5em",
-    }}
-  >
-    {car.description}
-  </Typography>
-  <Box display="flex" alignItems="center">
-    <Typography className="pizza-price">{car.price + " €"}</Typography>
-  </Box>
-</Box>
 
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="flex-start"
+                >
+                  <Typography variant="h6" fontWeight="bold">
+                    {car.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    style={{
+                      fontStyle: "italic",
+                      color: "grey",
+                      marginBottom: "0.5em",
+                    }}
+                  >
+                    {car.description}
+                  </Typography>
+                  <Box display="flex" alignItems="center">
+                    <Typography className="car-price">
+                      {car.price + " €"}
+                    </Typography>
+                  </Box>
+                </Box>
               </div>
             </li>
           ))}
         </ul>
       ) : (
-        <p>Aucune pizza disponible.</p>
+        <p>Aucune car disponible.</p>
       )}
     </div>
   );

@@ -1,12 +1,12 @@
 .register {
-  width: 25em;
+  width: 35em;
   position: absolute;
   top: 50%;
   left: 50%;
   padding: 1.5em;
   transform: translate(-50%, -50%);
   border-radius: 1em !important;
-  background-color: #3b438b;
+  background-color: #CDC392;
   color: white;
   font-family: "Arial", sans-serif; 
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); 
@@ -19,6 +19,7 @@
   gap: 1em;
   max-width: 20em;
   margin: auto;
+
 }
 
 .register input[type="text"],
@@ -28,13 +29,17 @@
   border: none;
   border-radius: 0.5em;
   transition: background-color 0.3s, color 0.3s;
+  background-color: #ffffff; 
+  width: 100%; /* Ajoutez cette propriété pour étendre les champs de saisie sur toute la largeur */
+
+
 }
 
 .register input[type="text"]:hover,
 .register input[type="password"]:hover,
 .register button:hover {
-  background-color: #5c639f; 
-  color: #fbc02c; 
+  background-color: #304C89; 
+  color: #ffffff; 
   cursor: pointer;
 }
 
@@ -57,16 +62,18 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s ease;
+  color: #304C89; 
+
 }
 
 .table-cell form input:hover {
-  border-color: #007bff;
+  color: #304C89; 
 }
 
 .table-cell form input::placeholder {
-  color: #888; 
+  color: #304C89; 
 }
 
 .table-cell form input:hover::placeholder {
-  color: #fbc02c; 
+  color: #ffffff; 
 }

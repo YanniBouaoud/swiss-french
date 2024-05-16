@@ -1,0 +1,26 @@
+.frise-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .frise-container.active {
+    display: block;
+  }
+  
+  .annee {
+    font-weight: bold;
+  }
+  
+  .evenement {
+    margin-left: 15px;
+  }
+  

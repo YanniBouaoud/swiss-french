@@ -1,3 +1,4 @@
+/* style.css */
 a {
   text-decoration: none;
 }
@@ -14,4 +15,17 @@ a:visited {
   margin-top: 30px;
   color: #666; 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); 
+  background-color: #f6f0ed; /* Couleur de fond pour le contenu de l'application */
 }
+
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px) rotateX(5deg);
+  background-color: #f6f0ed;
+  transition: transform 0.3s ease;
+}
+

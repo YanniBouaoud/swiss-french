@@ -10,12 +10,42 @@ const Welcome = () => {
     <Box>
       <Box role="menubar" display="flex" justifyContent="center">
         <Tabs>
-          <Tab label={t("common.importExport")} component={NavLink} to="/import-export" />
-          <Tab label={t("common.vehiculeEnVente")} component={NavLink} to="/VehiculePage" />
-          <Tab label={t("common.appartementDisponible")} component={NavLink} to="/appartement-disponible" />
-          <Tab label={t("common.activiteBatiment")} component={NavLink} to="/activite-batiment" />
-          <Tab label={t("common.histoireSociete")} component={NavLink} to="/histoire-societe" />
-          <Tab label={t("common.contacts")} component={NavLink} to="/contacts" />
+          <Tab
+            label={t("common.importExport")}
+            component={NavLink}
+            to="/import-export"
+            className="nav-link"
+          />
+          <Tab
+            label={t("common.vehiculeEnVente")}
+            component={NavLink}
+            to="/VehiculePage"
+            className="nav-link"
+          />
+          <Tab
+            label={t("common.appartementDisponible")}
+            component={NavLink}
+            to="/appartement-disponible"
+            className="nav-link"
+          />
+          <Tab
+            label={t("common.activiteBatiment")}
+            component={NavLink}
+            to="/activite-batiment"
+            className="nav-link"
+          />
+          <Tab
+            label={t("common.histoireSociete")}
+            component={NavLink}
+            to="/CompanyInfoPage"
+            className="nav-link"
+          />
+          <Tab
+            label={t("common.contacts")}
+            component={NavLink}
+            to="/ContactPage"
+            className="nav-link"
+          />
         </Tabs>
       </Box>
     </Box>

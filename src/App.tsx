@@ -9,6 +9,8 @@ import AuthenticationService from "./services/AuthenticationService";
 import PizzaListPage from "./pages/VehiculePage";
 import RegisterPage from "./pages/RegisterPage";
 import VehiculePage from "./pages/VehiculePage";
+import ContactPage from "./pages/ContactPage";
+import CompanyInfoPage from "./pages/CompanyInfoPage";
 
 const App = () => {
   const navigate = useNavigate();
@@ -28,8 +30,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Welcome />} />
             <Route path="/VehiculePage" element={<VehiculePage />} />
-
             <Route path="/RegisterPage" element={<RegisterPage />} />
+            <Route path="/ContactPage" element={<ContactPage />} />
+            <Route path="/CompanyInfoPage" element={<CompanyInfoPage />} />
 
             <Route path="/PizzaListPage/:filter" element={<PizzaListPage />} />
           </Routes>

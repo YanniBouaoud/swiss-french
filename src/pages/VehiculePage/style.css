@@ -1,5 +1,16 @@
-.pizza-list {
+.car-list {
   list-style: none;
+}
+
+.car-comment-container {
+  display: flex;
+  align-items: center;  
+  justify-content: center; /* Center align horizontally */
+  margin-bottom: 10px;
+}
+
+.car-info {
+  margin-right: 20px; /* Adjust as needed */
 }
 
 body {
@@ -7,23 +18,23 @@ body {
   margin-top: 50px;
 }
 
-.pizza-item {
+.car-item {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #F6F0ED;
+  background-color: #ffffff;
   transition: border-width 0.3s ease;
   transition: all 0.3s ease; 
 
 }
 
-.pizza-info {
+.car-info {
   display: flex;
   flex-wrap: wrap;
   max-width: calc(100% - 160px);
 }
 
-.pizza-info span {
+.car-info span {
   margin-right: 10px;
 }
 
@@ -52,12 +63,12 @@ body {
   text-decoration: none;
 }
 
-/* Pizza */
-.pizza-item:hover {
+/* car */
+.car-item:hover {
   border-width: 2px;
 }
 
-.pizza-price {
+.car-price {
   background-color: #28536B;
   padding: 5px;
   border-radius: 3px;
@@ -66,14 +77,29 @@ body {
   text-align: left;
 }
 
-.pizza-price span {
+.car-price span {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.pizza-item:hover {
+.car-item:hover {
   border-width: 2px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   transform: scale(1.05); 
+}
+
+.car-item img {
+  transition: transform 0.3s ease;
+}
+.car-item:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+
+}
+
+.car-item:hover .car-info {
+  transform: translateX(40%);
+  transition: transform 0.8s ease;
+
 }
 
 
@@ -172,7 +198,7 @@ body {
 }
 
 .button-icon:hover {
-  background-color: #f0f0f0;
+  background-color: #E8E5DA;
 }
 
 .minus {
@@ -196,7 +222,7 @@ body {
 }
 
 .button-icon:hover {
-  background-color: #F6F0ED;
+  background-color: #E8E5DA;
 }
 
 .minus {
@@ -270,6 +296,7 @@ body {
   animation: shine 2s infinite linear;
 }
 
-.pizza-item.selected {
-  background-color: #F6F0ED;
+.car-item.selected {
+  background-color: #E8E5DA;
 }
+
