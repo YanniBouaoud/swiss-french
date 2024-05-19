@@ -6,11 +6,10 @@
   padding: 1.5em;
   transform: translate(-50%, -50%);
   border-radius: 1em !important;
-  background-color: #f5f5eb; /* Couleur de fond pour le contenu de l'application */
+  background-color: #f5f5eb; 
   color: white;
   font-family: "Arial", sans-serif; 
 }
-
 
 .login-form {
   display: flex;
@@ -20,44 +19,38 @@
   margin: auto;
 }
 
-/* Appliquer la couleur de fond à toute la page */
 body {
   background-color: #f6f0ed;
 }
 
-/* Appliquer la couleur de fond aux boutons */
 button {
   background-color: #000;
-  color: #fff; /* Couleur du texte */
-  border: none; /* Supprimer la bordure */
-  border-radius: 5px; /* Ajouter un peu de bord arrondi */
-  padding: 10px 20px; /* Ajouter du padding pour un meilleur aspect */
-  cursor: pointer; /* Curseur pointer au survol */
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px;
+  cursor: pointer; 
 }
 
-/* Ajouter des styles spécifiques aux boutons de classe .register-button et .connect-button */
 .register-button,
 .connect-button {
   background-color: #000;
-  color: #fff; /* Changer la couleur du texte si nécessaire */
-  margin-top: 10px; /* Exemple de style supplémentaire */
+  color: #fff; 
+  margin-top: 10px; 
 }
 
-/* Ajouter des styles spécifiques aux boutons au survol */
 button:hover {
-  background-color: #333; /* Changer la couleur au survol si nécessaire */
+  background-color: #333; 
 }
 
-/* Ajouter une bordure noire aux cases */
 input[type="text"],
 input[type="password"] {
-  border: 1px solid #000; /* Ajouter une bordure noire */
-  border-radius: 5px; /* Ajouter un peu de bord arrondi */
-  padding: 10px; /* Ajouter du padding pour un meilleur aspect */
+  border: 1px solid #000; 
+  border-radius: 5px; 
+  padding: 10px; 
 }
 
-/* Ajouter des styles spécifiques aux cases au survol */
 input[type="text"]:hover,
 input[type="password"]:hover {
-  border-color: #333; /* Changer la couleur de la bordure au survol si nécessaire */
+  border-color: #333; 
 }

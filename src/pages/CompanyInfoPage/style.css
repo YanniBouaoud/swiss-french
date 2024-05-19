@@ -30,6 +30,7 @@
 color: white;
   border-radius: 20px; 
   padding: 20px; 
+  text-wrap: balance
 }
   
   .contact-button-container {
@@ -80,6 +81,7 @@ color: white;
   .info-text {
     width: 60%; /* Ajustez la largeur du texte */
     text-align: left;
+    text-wrap: balance
 
 }
   

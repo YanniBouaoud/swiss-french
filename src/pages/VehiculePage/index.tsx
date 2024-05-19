@@ -4,12 +4,8 @@ import SendIcon from "@mui/icons-material/Send";
 import { Box, IconButton, Typography, TextField } from "@mui/material";
 import CarService from "../../services/CarService";
 import { t } from "i18next";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import OrderService from "../../services/DevisCarService";
 import Car from "../../models/car";
-
 import DevisCarService from "../../services/DevisCarService";
-import DevisCarLine from "../../models/DevisCarLine";
 
 const VehiculePage: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
@@ -88,109 +84,107 @@ const VehiculePage: React.FC = () => {
 
   return (
     <div>
-  <IconButton onClick={handleShowCartDetails} className="cart-icon">
-    <SendIcon />
-    <Typography>Votre devis</Typography>
-  </IconButton>
+      <IconButton onClick={handleShowCartDetails} className="cart-icon">
+        <SendIcon />
+        <Typography>Votre devis</Typography>
+      </IconButton>
 
-  <div className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}>
-    {selectedCars.map((carIndex, i) => (
-      <div key={i} className="car-comment-container">
-        <div className="car-info">
-          <Typography variant="h6">{cars[carIndex].name}</Typography>
-         
-        </div>
-        <TextField
-          label="Commentaire"
-          variant="outlined"
-          value={cartCommentaires[i]}
-          onChange={(e) => {
-            const newCommentaires = [...cartCommentaires];
-            newCommentaires[i] = e.target.value;
-            setCartCommentaires(newCommentaires);
+      <div
+        className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}
+      >
+        {selectedCars.map((carIndex, i) => (
+          <div key={i} className="car-comment-container">
+            <div className="car-info">
+              <Typography variant="h6">{cars[carIndex].name}</Typography>
+            </div>
+            <TextField
+              label="Commentaire"
+              variant="outlined"
+              value={cartCommentaires[i]}
+              onChange={(e) => {
+                const newCommentaires = [...cartCommentaires];
+                newCommentaires[i] = e.target.value;
+                setCartCommentaires(newCommentaires);
+              }}
+            />
+          </div>
+        ))}
+        <button
+          onClick={handleSaveDevisCar}
+          style={{
+            backgroundColor: "green",
+            color: "white",
+            padding: "5px 10px",
+            borderRadius: "5px",
+            border: "none",
           }}
-        />
+          onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
+            (e.target as HTMLButtonElement).style.backgroundColor =
+              "lightgreen";
+          }}
+          onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
+            (e.target as HTMLButtonElement).style.backgroundColor = "green";
+          }}
+        >
+          &#10003; {t("common.validerDevis")}
+        </button>{" "}
       </div>
-    ))}
-    <button
-      onClick={handleSaveDevisCar}
-      style={{
-        backgroundColor: "green",
-        color: "white",
-        padding: "5px 10px",
-        borderRadius: "5px",
-        border: "none",
-      }}
-      onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
-        (e.target as HTMLButtonElement).style.backgroundColor = "lightgreen";
-      }}
-      onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
-        (e.target as HTMLButtonElement).style.backgroundColor = "green";
-      }}
-    >
-      &#10003; {t("common.validerDevis")}
-    </button>{" "}
-  </div>
-
 
       <Typography variant="h4" gutterBottom className="left-align">
         {t("common.choose")}
       </Typography>
 
       <div className="car-container">
+        {cars.length > 0 ? (
+          <ul className="car-list">
+            {cars.map((car, index) => (
+              <li
+                key={index}
+                className={`car-item ${
+                  selectedCars.includes(index) ? "selected" : ""
+                }`}
+                onClick={() => handleToggleSelection(index)}
+              >
+                <div className="car-info">
+                  <img
+                    src={car.image}
+                    alt={car.image}
+                    style={{ width: 200, marginRight: "1em" }}
+                  />
 
-      {cars.length > 0 ? (
-        <ul className="car-list">
-          {cars.map((car, index) => (
-            <li
-              key={index}
-              className={`car-item ${
-                selectedCars.includes(index) ? "selected" : ""
-              }`}
-              onClick={() => handleToggleSelection(index)}
-            >
-              <div className="car-info">
-
-                <img
-                  src={car.image}
-                  alt={car.image}
-                  style={{ width: 200, marginRight: "1em" }}
-                />
-
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="flex-start"
-                >
-                  <Typography variant="h6" fontWeight="bold">
-                    {car.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    style={{
-                      fontStyle: "italic",
-                      color: "grey",
-                      marginBottom: "0.5em",
-                    }}
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="flex-start"
                   >
-                    {car.description}
-                  </Typography>
-                  <Box display="flex" alignItems="center">
-                    <Typography className="car-price">
-                      {car.price + " €"}
+                    <Typography variant="h6" fontWeight="bold">
+                      {car.name}
                     </Typography>
+                    <Typography
+                      variant="body2"
+                      style={{
+                        fontStyle: "italic",
+                        color: "grey",
+                        marginBottom: "0.5em",
+                      }}
+                    >
+                      {car.description}
+                    </Typography>
+                    <Box display="flex" alignItems="center">
+                      <Typography className="car-price">
+                        {car.price + " €"}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
-              </div>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Aucune car disponible.</p>
-      )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Aucune car disponible.</p>
+        )}
+      </div>
     </div>
-    </div>
-
   );
 };
 
