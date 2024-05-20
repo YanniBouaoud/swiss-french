@@ -79,8 +79,6 @@ color: white;
   }
 
   .info-text {
-    width: 60%; /* Ajustez la largeur du texte */
-    text-align: left;
     text-wrap: balance
 
 }

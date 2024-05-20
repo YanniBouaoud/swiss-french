@@ -12,6 +12,7 @@ import VehiculePage from "./pages/VehiculePage";
 import ContactPage from "./pages/ContactPage";
 import CompanyInfoPage from "./pages/CompanyInfoPage";
 import BatimentPage from "./pages/BatimentPage";
+import AppartementPage from "./pages/AppartementPage";
 
 const App = () => {
   const navigate = useNavigate();
@@ -39,6 +40,8 @@ const App = () => {
             <Route path="/ContactPage" element={<ContactPage />} />
             <Route path="/BatimentPage" element={<BatimentPage />} />
             <Route path="/CompanyInfoPage" element={<CompanyInfoPage />} />
+            <Route path="/AppartementPage" element={<AppartementPage />} />
+
 
             <Route path="/PizzaListPage/:filter" element={<PizzaListPage />} />
           </Routes>

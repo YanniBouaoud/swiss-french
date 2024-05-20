@@ -25,7 +25,7 @@ const Welcome = () => {
           <Tab
             label={t("common.appartementDisponible")}
             component={NavLink}
-            to="/appartement-disponible"
+            to="/AppartementPage"
             className="nav-link"
           />
           <Tab

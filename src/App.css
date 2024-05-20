@@ -39,3 +39,121 @@ footer {
   background-color: #f5f5eb;  /* Assurez-vous que l'arrière-plan est en dessous du contenu principal */
 
 }
+
+/* styles.css de la page appartement */
+
+.app-container {
+  position: relative; /* Assurez-vous que l'élément parent a une position définie */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #001f3f; /* Fond bleu marine */
+  color: #fff; /* Texte blanc pour contraste */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1001; /* Juste au-dessus de l'overlay */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sombre en arrière-plan */
+  backdrop-filter: blur(10px); /* Effet de flou */
+  z-index: 1000; /* Derrière la popup mais devant le contenu principal */
+  
+}
+
+.appartement {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  background: #ffffff;
+  width: 300px; /* Largeur fixe pour chaque appartement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d; /* Pour la surélévation 3D */
+}
+
+.appartement:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#appartements-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Espacement entre les éléments */
+  margin-bottom: 20px;
+  justify-content: center; /* Centrer les appartements */
+}
+
+
+#ajouter-appartement-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#ajouter-appartement-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px); /* Surélévation légère */
+
+}
+
+#ajouter-appartement-formulaire label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#ajouter-appartement-formulaire input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#ajouter-appartement-formulaire button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px; /* Espacement entre les boutons */
+}
+
+#ajouter-appartement-formulaire button[type="button"] {
+  background-color: #a44848;
+  gap: 30px; /* Espacement entre les éléments */
+
+}
+
+#ajouter-appartement-formulaire button:hover {
+  background-color: #0ac536;
+}
+
+#ajouter-appartement-formulaire button[type="button"]:hover {
+  background-color: #d01919;
+}
