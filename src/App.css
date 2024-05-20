@@ -49,6 +49,7 @@ footer {
   align-items: center;
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  text-wrap: balance
 
 }
 
@@ -87,6 +88,8 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d; /* Pour la surélévation 3D */
+  text-wrap: balance;
+  font-family: Exo, Helvetica, sans-serif;
 }
 
 .appartement:hover {
@@ -102,22 +105,21 @@ footer {
   justify-content: center; /* Centrer les appartements */
 }
 
-
 #ajouter-appartement-btn {
-  margin-top: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: green;
+  color: white;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  border-radius: 50%;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 20px;
 }
 
 #ajouter-appartement-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-5px); /* Surélévation légère */
-
+  background-color: darkgreen; /* Change la couleur au survol */
 }
 
 #ajouter-appartement-formulaire label {

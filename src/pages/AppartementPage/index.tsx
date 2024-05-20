@@ -46,6 +46,14 @@ const AppartementPage  = () => {
 
 
     <div className="app-container">
+    <button
+      id="ajouter-appartement-btn"
+      onClick={() => setIsPopupVisible(true)}
+  
+    >
+      +{/* Icône de plus */}
+    </button>
+
       <div id="appartements-container">
         {appartements.map((appart, index) => (
           <div key={index} className="appartement">
@@ -60,9 +68,7 @@ const AppartementPage  = () => {
           </div>
         ))}
       </div>
-      <button id="ajouter-appartement-btn" onClick={() => setIsPopupVisible(true)}>
-        Ajouter un Appartement
-      </button>
+    
 
       {isPopupVisible && (
  <>
@@ -83,7 +89,6 @@ const AppartementPage  = () => {
 
       )}
     </div>
-
   );
 };
 
