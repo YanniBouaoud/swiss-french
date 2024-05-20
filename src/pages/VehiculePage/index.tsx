@@ -6,6 +6,8 @@ import CarService from "../../services/CarService";
 import { t } from "i18next";
 import Car from "../../models/car";
 import DevisCarService from "../../services/DevisCarService";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+
 
 const VehiculePage: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
@@ -109,25 +111,12 @@ const VehiculePage: React.FC = () => {
             />
           </div>
         ))}
-        <button
-          onClick={handleSaveDevisCar}
-          style={{
-            backgroundColor: "green",
-            color: "white",
-            padding: "5px 10px",
-            borderRadius: "5px",
-            border: "none",
-          }}
-          onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
-            (e.target as HTMLButtonElement).style.backgroundColor =
-              "lightgreen";
-          }}
-          onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
-            (e.target as HTMLButtonElement).style.backgroundColor = "green";
-          }}
-        >
-          &#10003; {t("common.validerDevis")}
-        </button>{" "}
+        
+
+
+        <IconButton onClick={handleSaveDevisCar} className="cart-icon">
+  <AddCircleOutlineIcon />
+</IconButton>
       </div>
 
       <Typography variant="h4" gutterBottom className="left-align">
