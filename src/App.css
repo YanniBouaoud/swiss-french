@@ -159,3 +159,15 @@ footer {
 #ajouter-appartement-formulaire button[type="button"]:hover {
   background-color: #d01919;
 }
+
+.h3{
+  text-wrap: balance;
+
+}
+/** welcome css**/
+
+.nav-link:hover {
+  transform: translateY(-1.4px) rotateX(4deg);
+  background-color: #e9dfda;
+  transition: transform 0.3s ease;
+}

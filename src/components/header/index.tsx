@@ -90,13 +90,13 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
                   FR
                 </Typography>
               </ToggleButton>
-              <ToggleButton value="nl">
+              <ToggleButton value="en">
                 <Typography
                   fontSize="small"
                   sx={{ width: "20px", height: "20px" }}
                   color="white"
                 >
-                  NL
+                  EN
                 </Typography>
               </ToggleButton>
             </ToggleButtonGroup>

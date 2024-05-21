@@ -75,11 +75,11 @@ const VehiculePage: React.FC = () => {
       setCartCommentaires([]);
       setCart(0);
 
-      alert("Commande enregistrée avec succès ! 30 minutes de délai d'attente");
+      alert("Notre équipe vous recontacteras dans les 24h concernant votre demande !");
     } catch (error) {
-      console.error("Erreur lors de l'enregistrement de la commande :", error);
+      console.error("Erreur dans votre demande", error);
       alert(
-        "Erreur lors de l'enregistrement de la commande. Veuillez réessayer."
+        "Erreur dans votre demande. Veuillez réessayer."
       );
     }
   };

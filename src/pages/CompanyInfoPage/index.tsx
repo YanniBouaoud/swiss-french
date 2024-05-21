@@ -47,11 +47,16 @@ const CompanyInfoPage = () => {
         <div className="markets">
           <h2>Marchés</h2>
           <p>
-            En 2019, carVertical a lancé le premier registre mondial sur
-            l'historique des voitures. Au cours de cette période, nous avons
-            réussi à établir une présence sur 28 marchés, et nous continuons à
-            nous développer, élevant le niveau de transparence sur le marché
-            mondial des voitures d'occasion.
+            Suiss French Group est un acteur polyvalent, présent sur divers
+            marchés économiques. Spécialisé dans le secteur immobilier, il
+            propose des services de vente, d'achat et de gestion de biens
+            immobiliers en Suisse et en France. En parallèle, l'entreprise opère
+            sur le marché de l'automobile en négociant des véhicules d'occasion.
+            Elle joue également un rôle sur le marché du commerce international
+            en facilitant l'import-export de produits non réglementés, et elle
+            fournit des services financiers en assurant des transferts d'argent
+            mondiaux via des prestataires renommés comme Western Union et
+            MoneyGram.
           </p>
         </div>
         <div className="contact-button-container">

@@ -31,38 +31,7 @@
     
     
   },
- 
-  "car": {
-    "1": "Clio 3",
-    "2": "4 Fromages",
-    "3": "Campagnarde",
-    "4": "Chèvre Miel",
-    "5": "Chicken Barbecue",
-    "6": "Hawaïenne",
-    "7": "Nordique",
-    "8": "Orientale",
-    "9": "Pepperoni",
-    "10": "Reine",
-    "11": "Texane Barbecue",
-    "12": "Végétarienne"
-  
-  },
 
-  "description": {
-    "1": "Sauce tomate à l'origan et mozzarella",
-    "2": "Sauce tomate à l'origan ou crème fraîche légère, mozzarella, fromage de chèvre, emmental et Fourme d'Ambert AOP",
-    "3": "Crème fraîche légère, mozzarella, lardons, oignons rouges frais et champignons frais",
-    "4": "Crème fraîche légère, mozzarella, fromage de chèvre, miel",
-    "5": "Sauce barbecue, mozzarella, Poulet rôti, oignons rouges frais, champignons frais et poivrons verts frais",
-    "6": "Sauce tomate à l'origan, mozzarella, jambon et ananas",
-    "7": "Crème fraîche légère, mozzarella et saumon fumé de Norvège",
-    "8": "Sauce tomate à l'origan, mozzarella, merguez et champignons frais",
-    "9": "Sauce tomate à l'origan, mozzarella et saucisse pepperoni",
-    "10": "Sauce tomate à l'origan, mozzarella, jambon et champignons frais",
-    "11": "Sauce barbecue, mozzarella, jambon, emietté au boeuf, lardons, champignons frais et oignons rouges frais.",
-    "12": "Sauce tomate à l'origan, mozzarella, champignons frais, oignons rouges frais, poivrons verts frais, tomates fraîches et Olives noires"
-  
-  },
   "error": {
     "minLen": "au moins {{field}} caractères",
     "required": "{{field}} est obligatoire",
