@@ -10,12 +10,7 @@ const Welcome = () => {
     <Box>
       <Box role="menubar" display="flex" justifyContent="center">
         <Tabs>
-          <Tab
-            label={t("common.importExport")}
-            component={NavLink}
-            to="/import-export"
-            className="nav-link"
-          />
+      
           <Tab
             label={t("common.vehiculeEnVente")}
             component={NavLink}
