@@ -76,7 +76,8 @@ footer {
   background: rgba(0, 0, 0, 0.5); /* Sombre en arrière-plan */
   backdrop-filter: blur(10px); /* Effet de flou */
   z-index: 1000; /* Derrière la popup mais devant le contenu principal */
-  
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
 }
 
 .appartement {
@@ -103,6 +104,8 @@ footer {
   gap: 30px; /* Espacement entre les éléments */
   margin-bottom: 20px;
   justify-content: center; /* Centrer les appartements */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
 }
 
 #ajouter-appartement-btn {
@@ -125,6 +128,8 @@ footer {
 #ajouter-appartement-formulaire label {
   display: block;
   margin-bottom: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
 }
 
 #ajouter-appartement-formulaire input {
@@ -143,7 +148,8 @@ footer {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-right: 20px; /* Espacement entre les boutons */
+  margin-right: 10px; /* Espacement entre les boutons */
+  margin-top: 2em;
 }
 
 #ajouter-appartement-formulaire button[type="button"] {
@@ -162,8 +168,17 @@ footer {
 
 .h3{
   text-wrap: balance;
-
 }
+
+  
+.intro-appart{
+margin-bottom: 3em;
+font-family: Exo, "Helvetica Neue", Helvetica, sans-serif;
+font-size: 1.1em
+}
+
+
+
 /** welcome css**/
 
 .nav-link:hover {
@@ -171,3 +186,4 @@ footer {
   background-color: #e9dfda;
   transition: transform 0.3s ease;
 }
+

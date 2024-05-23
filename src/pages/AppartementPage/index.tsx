@@ -52,13 +52,15 @@ const AppartementPage = () => {
 
   return (
     <div className="app-container">
-      <h3>
-        Voici la liste d'appartements disponibles à la vente par Swiss French
-        Group. Vous pouvez également nous confier le soin de trouver un acheteur
-        pour votre Maison, Appartement, Immeuble, Hangar, en le postant via le
-        bouton +. Votre bien sera affiché puis notre équipe vous contactera dans
-        les 24 heures suivantes.
-      </h3>
+      <div className="intro-appart">
+        <p>
+          Voici la liste d'appartements disponibles à la vente par Swiss French
+          Group. Vous pouvez également nous confier le soin de trouver un
+          acheteur pour votre Maison, Appartement, Immeuble, Hangar, en le
+          postant via le bouton +. Votre bien sera affiché puis notre équipe
+          vous contactera dans les 24 heures suivantes.
+        </p>
+      </div>
 
       <button
         id="ajouter-appartement-btn"

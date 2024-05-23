@@ -23,9 +23,8 @@ const App = () => {
 
   return (
 
-
     <div className="App">
-            <div className="striped-background"></div> {/* Ajoutez cette ligne */}
+            <div className="striped-background"></div> 
 
       <Header
         setIsAuthenticated={setIsAuthenticated}
@@ -41,8 +40,6 @@ const App = () => {
             <Route path="/BatimentPage" element={<BatimentPage />} />
             <Route path="/CompanyInfoPage" element={<CompanyInfoPage />} />
             <Route path="/AppartementPage" element={<AppartementPage />} />
-
-
             <Route path="/PizzaListPage/:filter" element={<PizzaListPage />} />
           </Routes>
         ) : (
