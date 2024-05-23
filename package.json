@@ -16,7 +16,7 @@
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
     "bcrypt": "^5.1.1",
-    "firebase": "^10.11.0",
+    "firebase": "^10.12.1",
     "formik": "^2.4.6",
     "i18next": "^23.11.3",
     "i18next-browser-languagedetector": "^7.2.0",
