@@ -9,7 +9,6 @@
   background-color: #f5f5eb;
   color: white;
   font-family: "Arial", sans-serif; 
-
 }
 
 .register form {
@@ -18,56 +17,39 @@
   gap: 1em;
   max-width: 20em;
   margin: auto;
-
 }
 
 .register input[type="text"],
 .register input[type="password"],
-.register button {
+.register button,
+.table-cell form input {
   padding: 0.6em;
   border: none;
   border-radius: 0.5em;
-  transition: background-color 0.3s, color 0.3s;
-  background-color: #ffffff; 
-  width: 100%; /* Ajoutez cette propriété pour étendre les champs de saisie sur toute la largeur */
-color: black;
-border: 1px solid black; /* Ajoutez cette ligne pour définir une bordure noire */
-
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s ease;
+  background-color: #ffffff;
+  width: 100%; /* Extend input fields to full width */
+  color: black;
+  border: 1px solid black; /* Add black border */
 }
 
 .register input[type="text"]:hover,
 .register input[type="password"]:hover,
-.register button:hover {
-  background-color: #0B132B; 
-  color: #ffffff; 
-  cursor: pointer;
+.register button:hover,
+.table-cell form input:hover {
+  background-color: #0B132B;
+  color: #ffffff;
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .register .button-container {
   margin-top: 15px; 
 }
 
-
-
 .table-container.register {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.table-cell form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s ease;
-  color: #304C89; 
-
-}
-
-.table-cell form input:hover {
-  color: #304C89; 
 }
 
 .table-cell form input::placeholder {

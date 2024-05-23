@@ -6,9 +6,9 @@
   padding: 1.5em;
   transform: translate(-50%, -50%);
   border-radius: 1em !important;
-  background-color: #f5f5eb; 
+  background-color: #f5f5eb;
   color: white;
-  font-family: "Arial", sans-serif; 
+  font-family: "Arial", sans-serif;
 }
 
 .login-form {
@@ -25,32 +25,32 @@ body {
 
 button {
   background-color: #000;
-  color: #fff; 
-  border: none; 
-  border-radius: 5px; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   padding: 10px 20px;
-  cursor: pointer; 
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .register-button,
 .connect-button {
   background-color: #000;
-  color: #fff; 
-  margin-top: 10px; 
+  color: #fff;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #333; 
+  background-color: #333;
 }
 
 input[type="text"],
 input[type="password"] {
-  border: 1px solid #000; 
-  border-radius: 5px; 
-  padding: 10px; 
+  border: 1px solid #000; /* Add black border */
+  border-radius: 5px;
+  padding: 10px;
 }
 
 input[type="text"]:hover,
 input[type="password"]:hover {
-  border-color: #333; 
+  border-color: #333; /* Change border color on hover */
 }
