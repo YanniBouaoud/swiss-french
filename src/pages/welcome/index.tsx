@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Tabs, Tab } from "@mui/material";
+import { Box, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 

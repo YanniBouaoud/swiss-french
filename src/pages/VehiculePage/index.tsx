@@ -12,7 +12,6 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 const VehiculePage: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
   const [selectedCars, setSelectedCars] = useState<number[]>([]);
-  const [cart, setCart] = useState<number>(0);
   const [showCartDetails, setShowCartDetails] = useState<boolean>(false);
   const [cartCommentaires, setCartCommentaires] = useState<string[]>([]);
 
@@ -73,7 +72,6 @@ const VehiculePage: React.FC = () => {
       // Réinitialisation du panier après avoir sauvegardé la commande
       setSelectedCars([]);
       setCartCommentaires([]);
-      setCart(0);
 
       alert("Notre équipe vous recontacteras dans les 24h concernant votre demande !");
     } catch (error) {
