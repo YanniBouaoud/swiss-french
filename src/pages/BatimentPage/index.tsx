@@ -16,7 +16,7 @@ const BatimentPage = () => {
       const newDevisBati = new DevisBati(budget, delais, description);
       await DevisBatiService.save(newDevisBati);
       alert("Devis enregistré avec succès !");
-      // Réinitialiser le formulaire après l'enregistrement
+      // Réinitialiser le formulaire après l'enregistrementvvvvvvvvvvvvvvvvvvvvvvvvvsssss
       setBudget(0);
       setDelais("");
       setDescription("");
