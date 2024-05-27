@@ -49,15 +49,18 @@ color: inherit;
 }
 
 
-.neon-title {
+.link-no-style {
   font-family: "Exo", sans-serif;
   font-size: 30px;
   font-weight: bold;
   color: #ffffff; /* Couleur jaune */
   margin-top: 10px; /* Ajustez la marge selon vos besoins */
-
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-
-
+.link-no-style:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+  color: rgb(205, 213, 255);
+}
 

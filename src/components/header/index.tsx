@@ -28,6 +28,12 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
     i18n.changeLanguage(newLanguage);
   };
 
+  const handleLogout = () => {
+    AuthenticationService.logout();
+    window.location.href = ''; 
+
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -104,13 +110,12 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
           {isAuthenticated && (
             <>
               <Box>
-                <IconButton
-                  color="inherit"
-                  onClick={() => {
-                    AuthenticationService.logout();
-                  }}
-                  title="logout"
-                >
+                
+              <IconButton
+                    color="inherit"
+                    onClick={handleLogout}
+                    title="logout"
+                  >
                   <Logout />
                 </IconButton>
               </Box>

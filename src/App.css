@@ -183,7 +183,10 @@ footer {
 .intro-appart{
 margin-bottom: 3em;
 font-family: Exo, "Helvetica Neue", Helvetica, sans-serif;
-font-size: 1.1em
+font-size: 1.1em;
+text-align: center;
+text-wrap: balance
+
 }
 
 
@@ -195,4 +198,6 @@ font-size: 1.1em
   background-color: #e9dfda;
   transition: transform 0.3s ease;
 }
+
+
 

@@ -54,11 +54,12 @@ const AppartementPage = () => {
     <div className="app-container">
       <div className="intro-appart">
         <p>
-          Voici la liste d'appartements disponibles à la vente par Swiss French
-          Group. Vous pouvez également nous confier le soin de trouver un
-          acheteur pour votre Maison, Appartement, Immeuble, Hangar, en le
-          postant via le bouton +. Votre bien sera affiché puis notre équipe
-          vous contactera dans les 24 heures suivantes.
+          Intéressé par un bien,{" "}
+          <a href="ContactPage">contactez-nous</a> ! Vous
+          pouvez également nous confier le soin de trouver un acheteur pour
+          votre Maison, Appartement, Immeuble, Hangar, en le postant via le
+          bouton +. Votre bien sera affiché puis notre équipe vous contactera
+          dans les 24 heures suivantes.
         </p>
       </div>
 
@@ -72,13 +73,14 @@ const AppartementPage = () => {
       <div id="appartements-container">
         {appartements.map((appart, index) => (
           <div key={index} className="appartement">
-            <p>Prix: {appart.price}</p>
+            <p>Prix: {appart.price} €</p>
             <p>Adresse: {appart.adresse}</p>
             <img
               src={appart.image}
               alt={appart.image}
               style={{ width: 300, marginRight: "2em", borderRadius: 15 }}
             />
+
             <p>Description: {appart.description}</p>
           </div>
         ))}
