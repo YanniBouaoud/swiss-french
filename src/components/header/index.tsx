@@ -19,7 +19,7 @@ interface Props {
 }
 
 const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
-  const { t, i18n } = useTranslation();
+  const {  i18n } = useTranslation();
 
   const toggleLanguage = (
     event: React.MouseEvent<HTMLElement>,

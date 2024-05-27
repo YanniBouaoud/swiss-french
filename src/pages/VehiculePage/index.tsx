@@ -6,13 +6,11 @@ import CarService from "../../services/CarService";
 import { t } from "i18next";
 import Car from "../../models/car";
 import DevisCarService from "../../services/DevisCarService";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const VehiculePage: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
   const [selectedCars, setSelectedCars] = useState<number[]>([]);
-  const [cart, setCart] = useState<number>(0);
   const [showCartDetails, setShowCartDetails] = useState<boolean>(false);
   const [cartCommentaires, setCartCommentaires] = useState<string[]>([]);
 
@@ -73,14 +71,13 @@ const VehiculePage: React.FC = () => {
       // Réinitialisation du panier après avoir sauvegardé la commande
       setSelectedCars([]);
       setCartCommentaires([]);
-      setCart(0);
 
-      alert("Notre équipe vous recontacteras dans les 24h concernant votre demande !");
+      alert(
+        "Notre équipe vous recontacteras dans les 24h concernant votre demande !"
+      );
     } catch (error) {
       console.error("Erreur dans votre demande", error);
-      alert(
-        "Erreur dans votre demande. Veuillez réessayer."
-      );
+      alert("Erreur dans votre demande. Veuillez réessayer.");
     }
   };
 
@@ -111,12 +108,10 @@ const VehiculePage: React.FC = () => {
             />
           </div>
         ))}
-        
-
 
         <IconButton onClick={handleSaveDevisCar} className="cart-icon">
-  <AddCircleOutlineIcon />
-</IconButton>
+          <AddCircleOutlineIcon />
+        </IconButton>
       </div>
 
       <Typography variant="h4" gutterBottom className="left-align">
@@ -150,15 +145,12 @@ const VehiculePage: React.FC = () => {
                       {car.name}
                     </Typography>
                     <Typography
-                      variant="body2"
-                      style={{
-                        fontStyle: "italic",
-                        color: "grey",
-                        marginBottom: "0.5em",
-                      }}
+                     
+                      className="cart-desc"
                     >
                       {car.description}
                     </Typography>
+
                     <Box display="flex" alignItems="center">
                       <Typography className="car-price">
                         {car.price + " €"}

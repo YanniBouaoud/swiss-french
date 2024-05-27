@@ -3,13 +3,16 @@ body {
 }
 
 .App {
-  text-align: center;
-
-background-size: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
   padding: 2.5em 0.5em;
+  
+    flex: 1;
+  
   background-color: #ffffff; /* Couleur de fond pour la section principale */
 }
 
@@ -20,15 +23,21 @@ header, footer {
 }
 
 footer {
-  position: fixed;
-
-    z-index: 1; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
-  
+  background-color: #00171F;
+  color: white;
+  text-align: center;
+  padding: 0.2rem;
+  width: 100%;
+  position: sticky;
   bottom: 0;
-  left: 0;
-  box-shadow: 0px -2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px -4px 5px 0px rgba(0, 0, 0, 0.14), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);
 }
+
+
+.car-container {
+  position: relative; /* Assurez-vous que les éléments sont positionnés de manière relative */
+  z-index: 2; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
+}
+
 
 .striped-background {
   position: fixed;

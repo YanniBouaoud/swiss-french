@@ -41,7 +41,7 @@ const RegisterPage: React.FC<RegisterPageProps> = () => {
 
       if (response) {
         // Succès de l'inscription
-        alert("Inscription réussie! Vous allez être redirigé vers la liste des pizzas.");
+        alert("Inscription réussie! Bienvenue sur le site de Suiss French Group");
 
         window.location.href = "/";
 
