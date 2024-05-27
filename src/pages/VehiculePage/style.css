@@ -14,9 +14,9 @@
 .car-info {
   margin-right: 20px; /* Adjust as needed */
   display: flex;
-  flex-wrap: wrap; 
-  max-width: calc(100% - 160px); 
-  z-index: 2; 
+  flex-wrap: wrap;
+  max-width: calc(100% - 160px);
+  z-index: 2;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
   padding: 10px;
   border-radius: 5px;
   background-color: #f5f5eb; /* Sets background color */
-  transition: border-width 0.3s ease, all 0.3s ease; 
+  transition: border-width 0.3s ease, all 0.3s ease;
   z-index: 2; /* Ensures the car item is above other elements */
 }
 
@@ -77,15 +77,15 @@ body {
 }
 
 .car-item:hover .car-info {
-  transform: translateX(40%); 
-  transition: transform 0.8s ease; 
+  transform: translateX(40%);
+  transition: transform 0.8s ease;
 }
 
 .container {
   display: flex;
   flex-direction: column; /* Stacks child elements vertically */
-  align-items: flex-start; 
-  justify-content: flex-start; 
+  align-items: flex-start;
+  justify-content: flex-start;
   z-index: 2; /* Ensures the container is above other elements */
 }
 
@@ -107,10 +107,10 @@ body {
   height: 40px;
   cursor: pointer; /* Changes cursor to pointer */
   display: flex;
-  align-items: center; 
-  border: 2px solid var(--main-color); 
-  box-shadow: 4px 4px var(--main-color); 
-  background-color: var(--bg-color); 
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
   border-radius: 10px;
   overflow: hidden;
   background-color: transparent; /* Makes the background transparent */
@@ -163,9 +163,9 @@ body {
 
 .custom-button {
   background-color: green; /* Sets background color */
-  color: white; 
+  color: white;
   padding: 8px 16px; /* Adds padding */
-  border: none; 
+  border: none;
   border-radius: 5px;
   cursor: pointer; /* Changes cursor to pointer */
 }
@@ -175,8 +175,8 @@ body {
 }
 
 .cart-details {
-  font-size: 12px; 
-  z-index: 2; 
+  font-size: 12px;
+  z-index: 2;
   opacity: 0; /* Sets initial opacity to 0 */
   transition: opacity 0.5s ease;
   color: rgb(112, 107, 107); /* Sets text color */
@@ -197,11 +197,11 @@ body {
   border: none; /* Removes border */
   cursor: pointer; /* Changes cursor to pointer */
   margin: 0 5px; /* Adds margin */
-  z-index: 2; 
+  z-index: 2;
 }
 
 .button-icon:hover {
-  background-color: #E8E5DA; /* Changes background color on hover */
+  background-color: #e8e5da; /* Changes background color on hover */
 }
 
 .minus {
@@ -225,7 +225,7 @@ body {
 
 .left-align {
   text-align: left;
-  color: #28536B;
+  color: #28536b;
   height: 60px;
   padding: 0 20px;
   display: flex;
@@ -245,18 +245,33 @@ body {
 }
 
 .left-align::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 1;
   left: 0;
   width: 25%;
   height: 80%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.174), transparent 50%, rgba(255, 255, 255, 0.415)) repeat-x;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.174),
+      transparent 50%,
+      rgba(255, 255, 255, 0.415)
+    )
+    repeat-x;
   background-size: 500px 100%;
-  animation: shine 2s infinite linear; /* Adds shine animation */
+  animation: shine 2s infinite linear; 
 }
 
 .car-item.selected {
-  background-color: #3A506B; /* Sets background color for selected items */
-  color: white; /* Sets text color for selected items */
+  background-color: #3a506b;
+  color: white; 
+}
+
+.cart-desc {
+  font-style: italic;
+  color: gray;
+}
+
+.selected .cart-desc {
+  color: white;
 }
