@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
 import AuthenticationService from "../../services/AuthenticationService";
-import UsersService from "../../services/UsersService"; 
+import UsersService from "../../services/UsersService";
 
 import "./style.css";
 
@@ -46,12 +46,9 @@ const Login: React.FC<Props> = ({ setIsAuthenticated, onRegisterClick }) => {
           values.login,
           values.password
         );
-
         if (response) {
           setIsAuthenticated(true);
-
           const user = await UsersService.getUserByUsername(values.login);
-
           // Vérification si l'utilisateur existe
           if (user) {
             // Stockage de l'ID de l'utilisateur connecté pour l'utiliser dans le save panier plus tard
@@ -79,55 +76,51 @@ const Login: React.FC<Props> = ({ setIsAuthenticated, onRegisterClick }) => {
   });
 
   return (
-
     <div className="App striped-background">
+      <div className="login-container">
+        {error && (
+          <Typography color="error">{t("common.loginError")}</Typography>
+        )}
+        <form className="login-form" onSubmit={formik.handleSubmit}>
+          <TextField
+            placeholder={t("common.loginPlaceholder")}
+            type="text"
+            InputLabelProps={{ style: { color: "white" } }}
+            InputProps={{ style: { color: "black" } }}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.login}
+            name="login"
+            error={formik.touched.login && Boolean(formik.errors.login)}
+            helperText={formik.touched.login && formik.errors.login}
+          />
+          <TextField
+            placeholder={t("common.passwordPlaceholder")}
+            type="password"
+            InputLabelProps={{ style: { color: "white", background: "white" } }}
+            InputProps={{ style: { color: "black" } }}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            name="password"
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+          />
 
-    <div className="login-container">
-      {error && <Typography color="error">{t("common.loginError")}</Typography>}
-      <form className="login-form" onSubmit={formik.handleSubmit}>
-        <TextField
-          placeholder={t("common.loginPlaceholder")}
-          type="text"
-          InputLabelProps={{ style: { color: "white" } }}
-          InputProps={{ style: { color: "black" } }}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.login}
-          name="login"
-          error={formik.touched.login && Boolean(formik.errors.login)}
-          helperText={formik.touched.login && formik.errors.login}
-        />
-        <TextField
-          placeholder={t("common.passwordPlaceholder")}
-          type="password"
-          InputLabelProps={{ style: { color: "white", background: "white" } }}
-          InputProps={{ style: { color: "black" } }}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
-          name="password"
-          error={formik.touched.password && Boolean(formik.errors.password)}
-          helperText={formik.touched.password && formik.errors.password}
-        />
-
-<Button
-  variant="contained"
-  type="submit"
-  onClick={onRegisterClick} // Appel de la fonction onRegisterClick lors du clic sur le bouton d'inscription
-  className="register-button"
->
-  {t("common.register")}
-</Button>
-        <Button variant="contained"    type="submit"
- className="connect-button">
-          {t("common.connect")}
-        </Button>
-       
-
-      </form>
+          <Button
+            variant="contained"
+            type="submit"
+            onClick={onRegisterClick} // Appel de la fonction onRegisterClick lors du clic sur le bouton d'inscription
+            className="register-button"
+          >
+            {t("common.register")}
+          </Button>
+          <Button variant="contained" type="submit" className="connect-button">
+            {t("common.connect")}
+          </Button>
+        </form>
+      </div>
     </div>
-    </div>
-
   );
 };
 

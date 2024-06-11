@@ -16,7 +16,7 @@ const BatimentPage = () => {
       const newDevisBati = new DevisBati(budget, delais, description);
       await DevisBatiService.save(newDevisBati);
       alert("Devis enregistré avec succès !");
-      // Réinitialiser le formulaire après l'enregistrementvvvvvvvvvvvvvvvvvvvvvvvvvsssss
+      // Réinitialiser le formulaire après l'enregistrement
       setBudget(0);
       setDelais("");
       setDescription("");
@@ -28,7 +28,9 @@ const BatimentPage = () => {
 
   return (
     <Box className="form-container">
-      <Typography variant="h6" gutterBottom>Formulaire de Devis Bâtiment</Typography>
+      <Typography variant="h6" gutterBottom>
+        Formulaire de Devis Bâtiment
+      </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
           className="text-field"
@@ -58,12 +60,7 @@ const BatimentPage = () => {
           required
           fullWidth
         />
-        <Button
-          className="button"
-          variant="contained"
-          type="submit"
-          fullWidth
-        >
+        <Button className="button" variant="contained" type="submit" fullWidth>
           Envoyer mon devis
         </Button>
       </form>

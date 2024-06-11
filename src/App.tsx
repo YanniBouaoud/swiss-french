@@ -44,14 +44,14 @@ const App = () => {
               <Route path="/AppartementPage" element={<AppartementPage />} />
             </>
           ) : (
-            <Route 
-              path="/" 
+            <Route
+              path="/"
               element={
                 <Login
                   setIsAuthenticated={setIsAuthenticated}
                   onRegisterClick={() => navigate("/RegisterPage")}
                 />
-              } 
+              }
             />
           )}
         </Routes>
