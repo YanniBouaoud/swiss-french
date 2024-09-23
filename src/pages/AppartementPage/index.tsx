@@ -54,7 +54,7 @@ const AppartementPage = () => {
     <div className="app-container">
       <div className="intro-appart">
         <p>
-          Intéressé par un bien, <a href="ContactPage">contactez-nous</a> ! Vous
+          Intéresser par un bien, <a href="ContactPage">contactez-nous</a> ! Vous
           pouvez également nous confier le soin de trouver un acheteur pour
           votre Maison, Appartement, Immeuble, Hangar, en le postant via le
           bouton +. Votre bien sera affiché puis notre équipe vous contactera
