@@ -1,6 +1,4 @@
-body {
-  margin: 0; /* Supprime les marges par défaut du corps */
-}
+
 
 .App {
   display: flex;
@@ -20,6 +18,11 @@ header, footer {
   background-color: rgb(111, 106, 185); /* Couleur de fond pour l'en-tête et le pied de page */
   color: #fff;
   width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 footer {
