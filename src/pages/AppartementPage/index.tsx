@@ -53,14 +53,21 @@ const AppartementPage = () => {
   return (
     <div className="app-container">
       <div className="intro-appart">
-        <p>
-          Intéresser par un bien, <a href="ContactPage">contactez-nous</a> ! Vous
-          pouvez également nous confier le soin de trouver un acheteur pour
-          votre Maison, Appartement, Immeuble, Hangar, en le postant via le
-          bouton +. Votre bien sera affiché puis notre équipe vous contactera
-          dans les 24 heures suivantes.
-        </p>
-      </div>
+  <p>
+    Intéresser par un bien, <a href="ContactPage">contactez-nous</a> ! 
+  </p>
+  <p>
+     Vous
+    pouvez également nous confier le soin de trouver un acheteur pour
+    votre Maison, Appartement, Immeuble, Hangar, en le postant via le
+    bouton +.
+  </p>
+  <p>
+    Votre bien sera affiché puis notre équipe vous contactera
+    dans les 24 heures suivantes.
+  </p>
+</div>
+
 
       <button
         id="ajouter-appartement-btn"

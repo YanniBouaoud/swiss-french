@@ -108,3 +108,31 @@
 #ajouter-appartement-formulaire button[type="button"]:hover {
   background-color: #d01919;
 }
+
+/* Add this to your CSS file */
+
+.intro-appart {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start */
+  justify-content: center; /* Center items vertically if there's extra space */
+  padding: 20px; /* Add some padding */
+  background-color: #f6f0ed; /* Optional: Background color */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow */
+}
+
+.intro-appart p {
+  margin: 10px 0; /* Space between paragraphs */
+  line-height: 1.6; /* Improved readability */
+  color: #333; /* Darker text for better contrast */
+}
+
+.intro-appart a {
+  color: #3f51b5; /* Link color */
+  text-decoration: underline; /* Underline links */
+}
+
+.intro-appart a:hover {
+  color: #303f9f; /* Darker shade on hover */
+}
