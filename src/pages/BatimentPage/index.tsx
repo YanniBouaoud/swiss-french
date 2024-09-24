@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, TextField, Button, Typography } from "@mui/material";
-
-import "./style.css";
+import "./style.css"; // Ensure your CSS file is imported
 import DevisBatiService from "../../services/DevisBatiService";
 import DevisBati from "../../models/devisbati";
 
@@ -16,7 +15,6 @@ const BatimentPage = () => {
       const newDevisBati = new DevisBati(budget, delais, description);
       await DevisBatiService.save(newDevisBati);
       alert("Devis enregistré avec succès !");
-      // Réinitialiser le formulaire après l'enregistrement
       setBudget(0);
       setDelais("");
       setDescription("");
@@ -28,10 +26,10 @@ const BatimentPage = () => {
 
   return (
     <Box className="form-container">
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h4" gutterBottom className="form-title">
         Formulaire de Devis Bâtiment
       </Typography>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <TextField
           className="text-field"
           label="Budget"
@@ -40,6 +38,7 @@ const BatimentPage = () => {
           onChange={(e) => setBudget(parseInt(e.target.value))}
           required
           fullWidth
+          variant="outlined"
         />
         <TextField
           className="text-field"
@@ -49,6 +48,7 @@ const BatimentPage = () => {
           onChange={(e) => setDelais(e.target.value)}
           required
           fullWidth
+          variant="outlined"
         />
         <TextField
           className="text-field"
@@ -59,9 +59,10 @@ const BatimentPage = () => {
           onChange={(e) => setDescription(e.target.value)}
           required
           fullWidth
+          variant="outlined"
         />
         <Button className="button" variant="contained" type="submit" fullWidth>
-          Envoyer mon devis
+          Demandez un devis
         </Button>
       </form>
     </Box>

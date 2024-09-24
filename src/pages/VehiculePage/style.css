@@ -68,13 +68,15 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
   transform: scale(1.05); /* Scales the item up on hover */
 }
-
-.car-item img {
-  transition: transform 0.3s ease; /* Smooth transformation effect */
+/* Réduire l'effet d'agrandissement */
+.car-item:hover img {
+  transform: scale(1.05); /* Réduire l'agrandissement à 1.05 au lieu de 1.1 */
 }
 
-.car-item:hover img {
-  transform: scale(1.1); /* Scales the image up on hover */
+/* Ajouter de l'espacement entre les images */
+.car-item img {
+  margin: 10px; /* Espacement autour de chaque image */
+  transition: transform 0.3s ease, margin 0.3s ease; /* Ajoutez une transition pour l'espacement aussi */
 }
 
 .car-item:hover .car-info {
@@ -181,6 +183,7 @@ body {
   opacity: 0; /* Sets initial opacity to 0 */
   transition: opacity 0.5s ease;
   color: rgb(255, 255, 255); /* Sets text color */
+  
 }
 
 .cart-details h4 {
@@ -260,12 +263,12 @@ body {
     )
     repeat-x;
   background-size: 500px 100%;
-  animation: shine 2s infinite linear; 
+  animation: shine 2s infinite linear;
 }
 
 .car-item.selected {
-  background-color: #3a506b;
-  color: white; 
+  background-color: #0d1b2a;
+  color: white;
 }
 
 .cart-desc {
@@ -276,10 +279,6 @@ body {
 .selected .cart-desc {
   color: white;
 }
-
-
-
-
 
 .cart-details {
   background-color: #28536b; /* Light background color */

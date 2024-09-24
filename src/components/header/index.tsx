@@ -10,8 +10,7 @@ import { useTranslation } from "react-i18next";
 import { Logout } from "@mui/icons-material";
 import AuthenticationService from "../../services/AuthenticationService";
 import "./style.css";
-import { Link } from 'react-router-dom'; // Import the Link component
-
+import { Link } from "react-router-dom"; // Import the Link component
 
 interface Props {
   isAuthenticated: boolean;
@@ -35,11 +34,11 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
   };
 
   return (
- <AppBar
+    <AppBar
       position="fixed"
       sx={{
         backgroundColor: "#00171F",
-                color: "#fff",
+        color: "#fff",
         height: "70px",
         display: "flex",
         justifyContent: "center",
@@ -47,7 +46,9 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
         boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
         zIndex: 1201,
       }}
-    >     <Box
+    >
+      {" "}
+      <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
@@ -64,15 +65,15 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
             alignItems: "center",
           }}
         >
-            <Link to="/"> {/* Wrap the img with the Link component */}
-
-          <img
-            src="/logo1.png"
-            alt="Logo"
-            style={{ maxHeight: "80px", marginLeft: "35px" }} // Adjust the size and margin as necessary
+          <Link to="/">
+            {" "}
+            {/* Wrap the img with the Link component */}
+            <img
+              src="/logo1.png"
+              alt="Logo"
+              style={{ maxHeight: "80px", marginLeft: "35px" }} // Adjust the size and margin as necessary
             />
-              </Link>
-
+          </Link>
         </Box>
 
         {/* Section droite : Boutons de langue et de déconnexion */}
@@ -85,13 +86,19 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
             className="ToggleButtonGroup"
           >
             <Tooltip title="Français" arrow>
-              <ToggleButton value="fr" className="ToggleButton"    style={{ color: 'white' }}   // Make text and border white
+              <ToggleButton
+                value="fr"
+                className="ToggleButton"
+                style={{ color: "white" }} // Make text and border white
               >
                 FR
               </ToggleButton>
             </Tooltip>
             <Tooltip title="English" arrow>
-              <ToggleButton value="en" className="ToggleButton"     style={{ color: 'white' }}    // Make text and border white
+              <ToggleButton
+                value="en"
+                className="ToggleButton"
+                style={{ color: "white" }} // Make text and border white
               >
                 EN
               </ToggleButton>
@@ -100,9 +107,14 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
 
           {isAuthenticated && (
             <Tooltip title="Logout" arrow>
-              <IconButton onClick={handleLogout} className="LogoutButton"         style={{ color: 'white' }} // Make icon color white
+              <IconButton
+                onClick={handleLogout}
+                className="LogoutButton"
+                style={{ color: "white" }} // Make icon color white
               >
-                <Logout />
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+                  <Logout />
+                </Link>
               </IconButton>
             </Tooltip>
           )}

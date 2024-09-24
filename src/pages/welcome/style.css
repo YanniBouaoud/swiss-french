@@ -29,3 +29,49 @@ a:visited {
   transition: transform 0.3s ease;
 }
 
+/* Updated styles for images */
+.image-container {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  margin: 5px 0; /* Reduced margin for closer spacing */
+  transition: transform 0.3s ease; /* Smooth transition for the image */
+}
+
+.image-container img {
+  width: 150px; /* Set a standard width for the images */
+  border-radius: 5px; /* Optional: rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition for the image size */
+}
+
+.nav-link:hover + .image-container {
+  transform: translateY(10px); /* Move the image down when hovered */
+}
+
+.nav-link:hover img {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+
+/* style.css */
+.image-container {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  margin: 5px 0; /* Reduced margin for closer spacing */
+  transition: transform 0.3s ease; /* Smooth transition for the container */
+}
+
+.image-container img {
+  width: 150px; /* Set a specific width for the images */
+  transition: transform 0.3s ease; /* Smooth transition for the images */
+  border-radius: 5px; /* Optional: rounded corners */
+}
+
+.nav-link:hover .image-container img {
+  transform: translateY(10px) scale(1.1); /* Moves down and enlarges the image on hover */
+}
+
+.nav-link:hover {
+  transform: translateY(-2px) rotateX(5deg);
+  background-color: #f6f0ed;
+  transition: transform 0.3s ease;
+}

@@ -7,6 +7,8 @@ import CarService from "../../services/CarService";
 import { t } from "i18next";
 import Car from "../../models/car";
 import DevisCarService from "../../services/DevisCarService";
+import SmartToyIcon from "@mui/icons-material/SmartToy";
+
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const VehiculePage: React.FC = () => {
@@ -57,7 +59,9 @@ const VehiculePage: React.FC = () => {
             commentaire: commentaire,
           };
         } else {
-          throw new Error("Le commentaire de la voiture ne peut pas être vide.");
+          throw new Error(
+            "Le commentaire de la voiture ne peut pas être vide."
+          );
         }
       });
 
@@ -72,7 +76,9 @@ const VehiculePage: React.FC = () => {
       setSelectedCars([]);
       setCartCommentaires([]);
 
-      alert("Notre équipe vous recontacteras dans les 24h concernant votre demande !");
+      alert(
+        "Notre équipe vous recontacteras dans les 24h concernant votre demande !"
+      );
     } catch (error) {
       console.error("Erreur dans votre demande", error);
       alert("Erreur dans votre demande. Veuillez réessayer.");
@@ -85,58 +91,82 @@ const VehiculePage: React.FC = () => {
   };
 
   // Filter cars based on the search term
-  const filteredCars = cars.filter(car =>
-    car.name.toLowerCase().includes(searchTerm) ||
-    car.description.toLowerCase().includes(searchTerm)
+  const filteredCars = cars.filter(
+    (car) =>
+      car.name.toLowerCase().includes(searchTerm) ||
+      car.description.toLowerCase().includes(searchTerm)
   );
 
   return (
     <div>
-      <IconButton onClick={handleShowCartDetails} className="cart-icon">
-  <SendIcon />
-  <Typography>
-    Votre devis {selectedCars.length > 0 ? `(${selectedCars.length})` : ""}
-  </Typography>
-</IconButton>
-
-
-      <div className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}>
-  <Typography variant="h5" fontWeight="bold" gutterBottom>
-    Demande de devis
-  </Typography>
-  {selectedCars.map((carIndex, i) => (
-    <div key={i} className="car-comment-container">
-      <div className="car-info">
-        <Typography variant="h6">{cars[carIndex].name}</Typography>
-      </div>
-      <TextField
-        className="text-field-small" // Apply smaller text field class
-        label="Commentaire"
-        variant="outlined"
-        size="small" // Smaller variant of the text field
-        value={cartCommentaires[i]}
-        onChange={(e) => {
-          const newCommentaires = [...cartCommentaires];
-          newCommentaires[i] = e.target.value;
-          setCartCommentaires(newCommentaires);
+      <IconButton
+        onClick={handleShowCartDetails}
+        className="cart-icon"
+        sx={{
+          position: "fixed",
+          bottom: 50, // Espace depuis le bas de la page
+          right: 50, // Espace depuis le côté gauche de la page
+          zIndex: 1000, // S'assure que le bouton est au-dessus d'autres éléments
         }}
-      />
-    </div>
-  ))}
-  
-  <IconButton onClick={handleSaveDevisCar} className="cart-icon">
-    <AddCircleOutlineIcon />
-  </IconButton>
-</div>
+      >
+        <SmartToyIcon />
+        <Typography sx={{ marginLeft: 1 }}>
+          Assistant Virtuel{" "}
+          {selectedCars.length > 0 ? `(${selectedCars.length})` : ""}
+        </Typography>
+      </IconButton>
 
+      <div
+        className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}
+        
+      >
+        <Typography variant="h5" fontWeight="bold" gutterBottom>
+          Recontactez-moi
+        </Typography>
+        {selectedCars.map((carIndex, i) => (
+          <div key={i} className="car-comment-container">
+            <div className="car-info">
+              <Typography variant="h6">{cars[carIndex].name}</Typography>
+            </div>
+            <TextField
+              className="text-field-small"
+              label="Une question ?"
+              variant="outlined"
+              size="small"
+              value={cartCommentaires[i]}
+              onChange={(e) => {
+                const newCommentaires = [...cartCommentaires];
+                newCommentaires[i] = e.target.value;
+                setCartCommentaires(newCommentaires);
+              }}
+              InputProps={{
+                style: { backgroundColor: "#ffffff" }, // Fond blanc
+              }}
+            />
+          </div>
+        ))}
 
+        <IconButton
+          onClick={handleSaveDevisCar}
+          className="cart-icon"
+          sx={{
+            backgroundColor: "#ffffff", // Fond blanc
+            "&:hover": {
+              backgroundColor: "#f0f0f0", // Fond légèrement plus foncé au survol
+            },
+            borderRadius: "50%", // Coins arrondis pour un effet bouton rond
+          }}
+        >
+          <AddCircleOutlineIcon />
+        </IconButton>
+      </div>
 
       <Typography variant="h4" gutterBottom className="left-align">
         {t("common.choose")}
       </Typography>
 
       {/* Search Icon */}
-      <Box display="flex" justifyContent="flex-end" marginBottom={2}>
+      <Box display="flex" justifyContent="center" marginBottom={2}>
         <IconButton onClick={() => setShowSearch(!showSearch)}>
           <SearchIcon />
         </IconButton>
@@ -147,7 +177,7 @@ const VehiculePage: React.FC = () => {
             label="Rechercher"
             variant="outlined"
             onChange={handleSearchChange}
-            style={{ marginLeft: '8px', width: '200px' }} // Adjust width and margin as needed
+            style={{ marginLeft: "8px", width: "200px" }} // Adjust width and margin as needed
           />
         )}
       </Box>
@@ -158,26 +188,44 @@ const VehiculePage: React.FC = () => {
             {filteredCars.map((car, index) => (
               <li
                 key={index}
-                className={`car-item ${selectedCars.includes(index) ? "selected" : ""}`}
+                className={`car-item ${
+                  selectedCars.includes(index) ? "selected" : ""
+                }`}
                 onClick={() => handleToggleSelection(index)}
               >
                 <div className="car-info">
                   <img
                     src={car.image}
                     alt={car.image}
-                    style={{ maxWidth: '300px', height: 'auto', marginRight: '1em' }}
+                    style={{
+                      maxWidth: "300px",
+                      height: "auto",
+                      marginRight: "1em",
+                    }}
                   />
                   <img
                     src={car.image2}
                     alt={car.image2}
-                    style={{ maxWidth: '300px', height: 'auto', marginRight: '1em' }}
+                    style={{
+                      maxWidth: "300px",
+                      height: "auto",
+                      marginRight: "1em",
+                    }}
                   />
                   <img
                     src={car.image3}
                     alt={car.image3}
-                    style={{ maxWidth: '250px', height: 'auto', marginRight: '1em' }}
+                    style={{
+                      maxWidth: "220px",
+                      height: "auto",
+                      marginRight: "1em",
+                    }}
                   />
-                  <Box display="flex" flexDirection="column" alignItems="flex-start">
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="flex-start"
+                  >
                     <Typography variant="h6" fontWeight="bold">
                       {car.name}
                     </Typography>
