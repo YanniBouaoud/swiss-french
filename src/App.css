@@ -1,46 +1,36 @@
+/* App.css */
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Makes the app take the full height of the viewport */
 }
 
 main {
   padding: 2.5em 0.5em;
-  
-    flex: 1;
-  
-  background-color: #ffffff; /* Couleur de fond pour la section principale */
+  flex: 1; /* Allows main content to expand */
+  background-color: #ffffff; /* Background color for the main section */
 }
 
 header, footer {
-  background-color: rgb(111, 106, 185); /* Couleur de fond pour l'en-tête et le pied de page */
+  background-color: rgb(111, 106, 185); /* Background color for header and footer */
   color: #fff;
   width: 100%;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 footer {
-  background-color: #00171F;
+  background-color: #00171F; /* Dark footer background */
   color: white;
   text-align: center;
   padding: 0.2rem;
   width: 100%;
-  position: sticky;
-  bottom: 0;
+  /* Removed position: sticky to ensure footer stays at the bottom */
 }
-
-
-.car-container {
-  position: relative; /* Assurez-vous que les éléments sont positionnés de manière relative */
-  z-index: 2; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
-}
-
 
 .striped-background {
   position: fixed;
@@ -48,21 +38,23 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f5f5eb;  /* Assurez-vous que l'arrière-plan est en dessous du contenu principal */
-
+  background-color: #f5f5eb; /* Background color for the striped background */
 }
 
-/* styles.css de la page appartement */
+.car-container {
+  position: relative;
+  z-index: 2; /* Places elements above background */
+}
+
+/* Styles for Appartement Page */
 
 .app-container {
-  position: relative; /* Assurez-vous que l'élément parent a une position définie */
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  text-wrap: balance
-
 }
 
 .popup {
@@ -70,12 +62,12 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #001f3f; /* Fond bleu marine */
-  color: #fff; /* Texte blanc pour contraste */
+  background: #001f3f; /* Navy background */
+  color: #fff; /* White text for contrast */
   padding: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 40px;
-  z-index: 1001; /* Juste au-dessus de l'overlay */
+  z-index: 1001; /* Above overlay */
   font-family: Exo, Helvetica, sans-serif;
 }
 
@@ -85,11 +77,10 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Sombre en arrière-plan */
-  backdrop-filter: blur(10px); /* Effet de flou */
-  z-index: 1000; /* Derrière la popup mais devant le contenu principal */
+  background: rgba(0, 0, 0, 0.5); /* Dark background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  z-index: 1000; /* Behind popup */
   transition: background-color 0.3s ease, transform 0.3s ease;
-
 }
 
 .appartement {
@@ -97,10 +88,9 @@ footer {
   border-radius: 15px;
   padding: 20px;
   background: #ffffff;
-  width: 300px; /* Largeur fixe pour chaque appartement */
+  width: 300px; /* Fixed width for each apartment */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d; /* Pour la surélévation 3D */
   text-wrap: balance;
   font-family: Exo, Helvetica, sans-serif;
 }
@@ -113,11 +103,9 @@ footer {
 #appartements-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* Espacement entre les éléments */
+  gap: 30px; /* Spacing between elements */
   margin-bottom: 20px;
-  justify-content: center; /* Centrer les appartements */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-
+  justify-content: center; /* Center apartments */
 }
 
 #ajouter-appartement-btn {
@@ -134,14 +122,12 @@ footer {
 }
 
 #ajouter-appartement-btn:hover {
-  background-color: darkgreen; /* Change la couleur au survol */
+  background-color: darkgreen; /* Change color on hover */
 }
 
 #ajouter-appartement-formulaire label {
   display: block;
   margin-bottom: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-
 }
 
 #ajouter-appartement-formulaire input {
@@ -159,15 +145,12 @@ footer {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-right: 10px; /* Espacement entre les boutons */
+  margin-right: 10px; /* Spacing between buttons */
   margin-top: 2em;
 }
 
 #ajouter-appartement-formulaire button[type="button"] {
   background-color: #a44848;
-  gap: 50px; /* Espacement entre les éléments */
-
 }
 
 #ajouter-appartement-formulaire button:hover {
@@ -178,29 +161,17 @@ footer {
   background-color: #d01919;
 }
 
-.h3{
-  text-wrap: balance;
+.intro-appart {
+  margin-bottom: 3em;
+  font-family: Exo, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.1em;
+  text-align: center;
 }
 
-  
-.intro-appart{
-margin-bottom: 3em;
-font-family: Exo, "Helvetica Neue", Helvetica, sans-serif;
-font-size: 1.1em;
-text-align: center;
-text-wrap: balance
-
-}
-
-
-
-/** welcome css**/
+/** Welcome CSS **/
 
 .nav-link:hover {
   transform: translateY(-1.4px) rotateX(4deg);
   background-color: #e9dfda;
   transition: transform 0.3s ease;
 }
-
-
-

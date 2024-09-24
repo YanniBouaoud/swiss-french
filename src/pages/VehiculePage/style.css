@@ -12,11 +12,12 @@
 }
 
 .car-info {
-  margin-right: 20px; /* Adjust as needed */
+  margin-right: 10px; /* Reduced margin to decrease right shift */
   display: flex;
   flex-wrap: wrap;
   max-width: calc(100% - 160px);
   z-index: 2;
+  width: 100%;
 }
 
 body {
@@ -77,7 +78,7 @@ body {
 }
 
 .car-item:hover .car-info {
-  transform: translateX(40%);
+  transform: translateX(20%); /* Reduced translation on hover */
   transition: transform 0.8s ease;
 }
 

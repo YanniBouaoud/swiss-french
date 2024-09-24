@@ -40,7 +40,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
       sx={{
         backgroundColor: "#00171F",
                 color: "#fff",
-        height: "80px",
+        height: "70px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -69,7 +69,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated }: Props) => {
           <img
             src="/logo1.png"
             alt="Logo"
-            style={{ maxHeight: "85px", marginLeft: "30px" }} // Adjust the size and margin as necessary
+            style={{ maxHeight: "80px", marginLeft: "35px" }} // Adjust the size and margin as necessary
             />
               </Link>
 

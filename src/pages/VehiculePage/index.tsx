@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import SendIcon from "@mui/icons-material/Send";
 import { Box, IconButton, Typography, TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search"; // Import the Search icon
 import CarService from "../../services/CarService";
 import { t } from "i18next";
 import Car from "../../models/car";
@@ -13,6 +14,8 @@ const VehiculePage: React.FC = () => {
   const [selectedCars, setSelectedCars] = useState<number[]>([]);
   const [showCartDetails, setShowCartDetails] = useState<boolean>(false);
   const [cartCommentaires, setCartCommentaires] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>(""); // State for search input
+  const [showSearch, setShowSearch] = useState<boolean>(false); // State to toggle search input visibility
 
   useEffect(() => {
     async function fetchCars() {
@@ -46,7 +49,7 @@ const VehiculePage: React.FC = () => {
       }
 
       const devisCarLines = selectedCars.map((carIndex, i) => {
-        const commentaire = cartCommentaires[i].trim(); // Récupérer le commentaire correspondant à la voiture actuelle
+        const commentaire = cartCommentaires[i].trim();
 
         if (commentaire.trim() !== "") {
           return {
@@ -54,9 +57,7 @@ const VehiculePage: React.FC = () => {
             commentaire: commentaire,
           };
         } else {
-          throw new Error(
-            "Le commentaire de la voiture ne peut pas être vide."
-          );
+          throw new Error("Le commentaire de la voiture ne peut pas être vide.");
         }
       });
 
@@ -68,18 +69,26 @@ const VehiculePage: React.FC = () => {
       const savedDevisCar = await DevisCarService.save(deviscarData);
       console.log("Saved order:", savedDevisCar);
 
-      // Réinitialisation du panier après avoir sauvegardé la commande
       setSelectedCars([]);
       setCartCommentaires([]);
 
-      alert(
-        "Notre équipe vous recontacteras dans les 24h concernant votre demande !"
-      );
+      alert("Notre équipe vous recontacteras dans les 24h concernant votre demande !");
     } catch (error) {
       console.error("Erreur dans votre demande", error);
       alert("Erreur dans votre demande. Veuillez réessayer.");
     }
   };
+
+  // Function to handle search input change
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value.toLowerCase());
+  };
+
+  // Filter cars based on the search term
+  const filteredCars = cars.filter(car =>
+    car.name.toLowerCase().includes(searchTerm) ||
+    car.description.toLowerCase().includes(searchTerm)
+  );
 
   return (
     <div>
@@ -88,9 +97,7 @@ const VehiculePage: React.FC = () => {
         <Typography>Votre devis</Typography>
       </IconButton>
 
-      <div
-        className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}
-      >
+      <div className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}>
         {selectedCars.map((carIndex, i) => (
           <div key={i} className="car-comment-container">
             <div className="car-info">
@@ -118,39 +125,55 @@ const VehiculePage: React.FC = () => {
         {t("common.choose")}
       </Typography>
 
+      {/* Search Icon */}
+      <Box display="flex" justifyContent="flex-end" marginBottom={2}>
+        <IconButton onClick={() => setShowSearch(!showSearch)}>
+          <SearchIcon />
+        </IconButton>
+        {/* Conditional rendering of the search input field */}
+        {showSearch && (
+          <TextField
+            size="small" // Smaller size for aesthetics
+            label="Rechercher"
+            variant="outlined"
+            onChange={handleSearchChange}
+            style={{ marginLeft: '8px', width: '200px' }} // Adjust width and margin as needed
+          />
+        )}
+      </Box>
+
       <div className="car-container">
-        {cars.length > 0 ? (
+        {filteredCars.length > 0 ? (
           <ul className="car-list">
-            {cars.map((car, index) => (
+            {filteredCars.map((car, index) => (
               <li
                 key={index}
-                className={`car-item ${
-                  selectedCars.includes(index) ? "selected" : ""
-                }`}
+                className={`car-item ${selectedCars.includes(index) ? "selected" : ""}`}
                 onClick={() => handleToggleSelection(index)}
               >
                 <div className="car-info">
                   <img
                     src={car.image}
                     alt={car.image}
-                    style={{ width: 200, marginRight: "1em" }}
+                    style={{ maxWidth: '300px', height: 'auto', marginRight: '1em' }}
                   />
-
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="flex-start"
-                  >
+                  <img
+                    src={car.image2}
+                    alt={car.image2}
+                    style={{ maxWidth: '300px', height: 'auto', marginRight: '1em' }}
+                  />
+                  <img
+                    src={car.image3}
+                    alt={car.image3}
+                    style={{ maxWidth: '250px', height: 'auto', marginRight: '1em' }}
+                  />
+                  <Box display="flex" flexDirection="column" alignItems="flex-start">
                     <Typography variant="h6" fontWeight="bold">
                       {car.name}
                     </Typography>
-                    <Typography
-                     
-                      className="cart-desc"
-                    >
+                    <Typography className="cart-desc">
                       {car.description}
                     </Typography>
-
                     <Box display="flex" alignItems="center">
                       <Typography className="car-price">
                         {car.price + " €"}
@@ -162,7 +185,7 @@ const VehiculePage: React.FC = () => {
             ))}
           </ul>
         ) : (
-          <p>Aucune car disponible.</p>
+          <p>Aucune voiture disponible.</p>
         )}
       </div>
     </div>

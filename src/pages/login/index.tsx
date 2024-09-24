@@ -107,17 +107,34 @@ const Login: React.FC<Props> = ({ setIsAuthenticated, onRegisterClick }) => {
             helperText={formik.touched.password && formik.errors.password}
           />
 
-          <Button
-            variant="contained"
-            type="submit"
-            onClick={onRegisterClick} // Appel de la fonction onRegisterClick lors du clic sur le bouton d'inscription
-            className="register-button"
-          >
-            {t("common.register")}
-          </Button>
-          <Button variant="contained" type="submit" className="connect-button">
-            {t("common.connect")}
-          </Button>
+<Button
+  variant="contained"
+  type="submit"
+  className="connect-button"
+  sx={{ backgroundColor: '#003a4f', '&:hover': { backgroundColor: '#00171F' } }} // Set background color and hover effect
+>
+  {t("common.connect")}
+</Button>
+<Button
+  variant="contained"
+  type="submit"
+  onClick={onRegisterClick} // Call the onRegisterClick function on button click
+  className="register-button"
+  sx={{ 
+    backgroundColor: '#003a4f', 
+    '&:hover': { backgroundColor: '#00171F' },
+    borderRadius: '12px', // Set border radius for rounded corners
+    padding: '4px 8px', // Decrease padding for a smaller button
+    fontSize: '0.75rem', // Decrease font size for compactness
+    minWidth: '0', // Remove default min width
+    height: '30px' // Set a fixed height if necessary
+  }} 
+>
+  {t("common.register")}
+</Button>
+
+
+
         </form>
       </div>
     </div>

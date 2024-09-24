@@ -7,7 +7,7 @@ const Footer = () => {
 
     <Box className="footer">
       <Typography variant="body1"  >
-        &copy; suiss-french-group Lille
+        &copy; SFG 
       </Typography>
     </Box>
     
