@@ -100,9 +100,9 @@ body {
 .button {
   --main-focus: #2d8cf0;
   --font-color: #323232;
-  --bg-color-sub: #dedede;
+  --bg-color-sub: #ffffff;
   --bg-color: #eee;
-  --main-color: #323232;
+  --main-color: #ffffff;
   position: relative;
   width: 150px;
   height: 40px;
@@ -180,7 +180,7 @@ body {
   z-index: 2;
   opacity: 0; /* Sets initial opacity to 0 */
   transition: opacity 0.5s ease;
-  color: rgb(112, 107, 107); /* Sets text color */
+  color: rgb(255, 255, 255); /* Sets text color */
 }
 
 .cart-details h4 {
@@ -275,4 +275,46 @@ body {
 
 .selected .cart-desc {
   color: white;
+}
+
+
+
+
+
+.cart-details {
+  background-color: #28536b; /* Light background color */
+  border: 1px solid #ffffff; /* Border around the bubble */
+  border-radius: 12px; /* Rounded corners */
+  padding: 12px; /* Inner spacing */
+  max-width: 400px; /* Maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition */
+  position: absolute; /* Positioning it where needed */
+  right: 20px; /* Adjust position */
+  top: 80px; /* Adjust position */
+  display: none; /* Hidden by default */
+}
+
+.show-cart-details {
+  display: block; /* Show when active */
+}
+
+.car-comment-container {
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 8px; /* Space between comments */
+}
+
+.car-info {
+  flex-grow: 1; /* Allow this to take the available space */
+}
+
+.text-field-small {
+  width: 150px; /* Smaller width for text field */
+  margin-left: 8px; /* Space between title and text field */
+}
+
+.cart-icon {
+  margin-top: 10px; /* Space above the icon */
+  color: #ffffff;
 }

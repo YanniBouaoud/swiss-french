@@ -93,33 +93,43 @@ const VehiculePage: React.FC = () => {
   return (
     <div>
       <IconButton onClick={handleShowCartDetails} className="cart-icon">
-        <SendIcon />
-        <Typography>Votre devis</Typography>
-      </IconButton>
+  <SendIcon />
+  <Typography>
+    Votre devis {selectedCars.length > 0 ? `(${selectedCars.length})` : ""}
+  </Typography>
+</IconButton>
+
 
       <div className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}>
-        {selectedCars.map((carIndex, i) => (
-          <div key={i} className="car-comment-container">
-            <div className="car-info">
-              <Typography variant="h6">{cars[carIndex].name}</Typography>
-            </div>
-            <TextField
-              label="Commentaire"
-              variant="outlined"
-              value={cartCommentaires[i]}
-              onChange={(e) => {
-                const newCommentaires = [...cartCommentaires];
-                newCommentaires[i] = e.target.value;
-                setCartCommentaires(newCommentaires);
-              }}
-            />
-          </div>
-        ))}
-
-        <IconButton onClick={handleSaveDevisCar} className="cart-icon">
-          <AddCircleOutlineIcon />
-        </IconButton>
+  <Typography variant="h5" fontWeight="bold" gutterBottom>
+    Demande de devis
+  </Typography>
+  {selectedCars.map((carIndex, i) => (
+    <div key={i} className="car-comment-container">
+      <div className="car-info">
+        <Typography variant="h6">{cars[carIndex].name}</Typography>
       </div>
+      <TextField
+        className="text-field-small" // Apply smaller text field class
+        label="Commentaire"
+        variant="outlined"
+        size="small" // Smaller variant of the text field
+        value={cartCommentaires[i]}
+        onChange={(e) => {
+          const newCommentaires = [...cartCommentaires];
+          newCommentaires[i] = e.target.value;
+          setCartCommentaires(newCommentaires);
+        }}
+      />
+    </div>
+  ))}
+  
+  <IconButton onClick={handleSaveDevisCar} className="cart-icon">
+    <AddCircleOutlineIcon />
+  </IconButton>
+</div>
+
+
 
       <Typography variant="h4" gutterBottom className="left-align">
         {t("common.choose")}
