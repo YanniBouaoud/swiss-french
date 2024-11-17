@@ -21,7 +21,7 @@
   }
 
   .sectors h2{
-    color: black;
+    color: #1e4e7e;
   }
 
 .markets{
@@ -39,6 +39,8 @@ color: white;
     text-align: center;
     padding: 20px 0;
   }
+
+  
   
   .contact-button {
     background-color: #3d5a80;
@@ -115,3 +117,24 @@ color: white;
   z-index: 1; /* Définissez le z-index pour placer ces éléments au-dessus de l'arrière-plan */
 }
 
+.contact-button-container {
+  text-align: center; /* Centre le bouton horizontalement */
+}
+
+.contact-button {
+  display: inline-block;
+  color: #ffffff; /* Texte en blanc */
+  background-color: transparent; /* Arrière-plan transparent */
+  border: 2px solid #1e4e7e; /* Bordure blanche */
+  padding: 10px 20px; /* Espacement interne */
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: 16px; /* Taille de la police */
+  font-weight: bold; /* Texte en gras */
+  border-radius: 8px; /* Coins arrondis */
+  transition: all 0.3s ease; /* Animation fluide pour les interactions */
+}
+
+.contact-button:hover {
+  background-color: #ffffff; /* Change l'arrière-plan au survol */
+  color: #000000; /* Change le texte en noir */
+}

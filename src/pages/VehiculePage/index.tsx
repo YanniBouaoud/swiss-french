@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import SendIcon from "@mui/icons-material/Send";
-import { Box, IconButton, Typography, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search"; // Import the Search icon
+import DescriptionIcon from "@mui/icons-material/Description";
+import {
+  Box,
+  IconButton,
+  Typography,
+  TextField,
+  Paper,
+  Button,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import CarService from "../../services/CarService";
 import { t } from "i18next";
 import Car from "../../models/car";
 import DevisCarService from "../../services/DevisCarService";
-import SmartToyIcon from "@mui/icons-material/SmartToy";
-
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const VehiculePage: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
   const [selectedCars, setSelectedCars] = useState<number[]>([]);
   const [showCartDetails, setShowCartDetails] = useState<boolean>(false);
   const [cartCommentaires, setCartCommentaires] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>(""); // State for search input
-  const [showSearch, setShowSearch] = useState<boolean>(false); // State to toggle search input visibility
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [showSearch, setShowSearch] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchCars() {
@@ -51,9 +55,9 @@ const VehiculePage: React.FC = () => {
       }
 
       const devisCarLines = selectedCars.map((carIndex, i) => {
-        const commentaire = cartCommentaires[i].trim();
+        const commentaire = cartCommentaires[i]?.trim() || "";
 
-        if (commentaire.trim() !== "") {
+        if (commentaire !== "") {
           return {
             car_id: carIndex + 1,
             commentaire: commentaire,
@@ -77,7 +81,7 @@ const VehiculePage: React.FC = () => {
       setCartCommentaires([]);
 
       alert(
-        "Notre équipe vous recontacteras dans les 24h concernant votre demande !"
+        "Notre équipe vous recontactera dans les 24h concernant votre demande !"
       );
     } catch (error) {
       console.error("Erreur dans votre demande", error);
@@ -85,12 +89,10 @@ const VehiculePage: React.FC = () => {
     }
   };
 
-  // Function to handle search input change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
 
-  // Filter cars based on the search term
   const filteredCars = cars.filter(
     (car) =>
       car.name.toLowerCase().includes(searchTerm) ||
@@ -104,80 +106,114 @@ const VehiculePage: React.FC = () => {
         className="cart-icon"
         sx={{
           position: "fixed",
-          bottom: 50, // Espace depuis le bas de la page
-          right: 50, // Espace depuis le côté gauche de la page
-          zIndex: 1000, // S'assure que le bouton est au-dessus d'autres éléments
+          bottom: 50,
+          right: 50,
+          zIndex: 1000,
+          backgroundColor: "#1976d2",
+          color: "#fff",
+          "&:hover": {
+            backgroundColor: "#1565c0",
+          },
+          padding: "1rem",
+          borderRadius: "50%",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
         }}
       >
-        <SmartToyIcon />
-        <Typography sx={{ marginLeft: 1 }}>
-          Assistant Virtuel{" "}
-          {selectedCars.length > 0 ? `(${selectedCars.length})` : ""}
-        </Typography>
+        <DescriptionIcon fontSize="large" />
       </IconButton>
 
-      <div
-        className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}
-        
-      >
-        <Typography variant="h5" fontWeight="bold" gutterBottom>
-          Recontactez-moi
-        </Typography>
-        {selectedCars.map((carIndex, i) => (
-          <div key={i} className="car-comment-container">
-            <div className="car-info">
-              <Typography variant="h6">{cars[carIndex].name}</Typography>
-            </div>
-            <TextField
-              className="text-field-small"
-              label="Une question ?"
-              variant="outlined"
-              size="small"
-              value={cartCommentaires[i]}
-              onChange={(e) => {
-                const newCommentaires = [...cartCommentaires];
-                newCommentaires[i] = e.target.value;
-                setCartCommentaires(newCommentaires);
-              }}
-              InputProps={{
-                style: { backgroundColor: "#ffffff" }, // Fond blanc
-              }}
-            />
-          </div>
-        ))}
-
-        <IconButton
-          onClick={handleSaveDevisCar}
-          className="cart-icon"
+      {showCartDetails && (
+        <Paper
+          elevation={4}
+          className={`cart-details ${showCartDetails ? "show-cart-details" : ""}`}
           sx={{
-            backgroundColor: "#ffffff", // Fond blanc
-            "&:hover": {
-              backgroundColor: "#f0f0f0", // Fond légèrement plus foncé au survol
-            },
-            borderRadius: "50%", // Coins arrondis pour un effet bouton rond
+            position: "fixed",
+            bottom: 120,
+            right: 50,
+            width: "400px",
+            padding: "2rem",
+            borderRadius: "15px",
+            backgroundColor: "#f9f9f9",
+            boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.2)",
+            transition: "transform 0.3s ease, opacity 0.3s ease",
+            transform: showCartDetails ? "translateY(0)" : "translateY(50px)",
+            opacity: showCartDetails ? 1 : 0,
           }}
         >
-          <AddCircleOutlineIcon />
-        </IconButton>
-      </div>
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            gutterBottom
+            textAlign="center"
+            color="#1976d2"
+          >
+            Demande de devis
+          </Typography>
+
+          <Box>
+            {selectedCars.map((carIndex, i) => (
+              <Box
+                key={i}
+                sx={{
+                  marginBottom: "1rem",
+                  padding: "1rem",
+                  borderRadius: "10px",
+                  backgroundColor: "#fff",
+                  boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <Typography variant="h6" gutterBottom>
+                  {cars[carIndex]?.name}
+                </Typography>
+                <TextField
+                  label="Ajouter un commentaire"
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                  value={cartCommentaires[i] || ""}
+                  onChange={(e) => {
+                    const newCommentaires = [...cartCommentaires];
+                    newCommentaires[i] = e.target.value;
+                    setCartCommentaires(newCommentaires);
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
+
+          <Button
+            onClick={handleSaveDevisCar}
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{
+              marginTop: "1rem",
+              padding: "0.8rem",
+              fontSize: "1rem",
+              textTransform: "none",
+              borderRadius: "8px",
+            }}
+          >
+            Envoyer
+          </Button>
+        </Paper>
+      )}
 
       <Typography variant="h4" gutterBottom className="left-align">
         {t("common.choose")}
       </Typography>
 
-      {/* Search Icon */}
       <Box display="flex" justifyContent="center" marginBottom={2}>
         <IconButton onClick={() => setShowSearch(!showSearch)}>
           <SearchIcon />
         </IconButton>
-        {/* Conditional rendering of the search input field */}
         {showSearch && (
           <TextField
-            size="small" // Smaller size for aesthetics
+            size="small"
             label="Rechercher"
             variant="outlined"
             onChange={handleSearchChange}
-            style={{ marginLeft: "8px", width: "200px" }} // Adjust width and margin as needed
+            style={{ marginLeft: "8px", width: "200px" }}
           />
         )}
       </Box>
@@ -194,7 +230,7 @@ const VehiculePage: React.FC = () => {
                 onClick={() => handleToggleSelection(index)}
               >
                 <div className="car-info">
-                  <img
+                <img
                     src={car.image}
                     alt={car.image}
                     style={{
